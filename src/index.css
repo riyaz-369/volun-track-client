@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.primary-btn {
+  @apply px-[52px] lg:px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#955E42] rounded-lg hover:bg-[#553739];
+}
