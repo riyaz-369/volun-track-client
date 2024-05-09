@@ -1,8 +1,23 @@
-# React + Vite
+# VolunTrack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- - [web name](url) -->
 
-Currently, two official plugins are available:
+# Website features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Volunteer Community
+
+# Uses Package
+
+## Front-End
+
+- [React-Router-DOM](https://reactrouter.com/en/main)
+- [TailwindCSS](https://github.com/vitejs/vite-plugin-react-swc)
+- [Firebase](https://firebase.google.com/?gad_source=1&gclid=EAIaIQobChMIs5ywobWBhgMVcNc8Ah0DzQqyEAAYASAAEgJv7fD_BwE&gclsrc=aw.ds)
+- [React Hook Form](https://react-hook-form.com)
+- [React Icons](https://react-icons.github.io/react-icons)
+
+## Back-End
+
+- [MongoDB](https://www.mongodb.com)
+- [Express.js](https://expressjs.com)
+- [Node.js](https://nodejs.org/en)

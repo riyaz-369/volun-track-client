@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         inter: "Inter, sans-serif",
+        ubuntu: "Ubuntu Sans Mono, monospace",
       },
     },
   },

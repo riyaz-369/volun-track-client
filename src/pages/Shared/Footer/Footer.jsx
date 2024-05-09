@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="bg-[#1A1A1A] text-gray-200">
-      <div className="py-12 max-w-7xl mx-auto">
+      <div className="py-8 max-w-7xl mx-auto">
         <div className="">
           <Link to="/">
             <img
@@ -31,10 +31,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
+        <hr className="my-6 md:my-8 border-gray-700" />
 
         <div className="flex flex-col items-center sm:flex-row sm:justify-between">
-          <p className="text-sm text-gray-500 dark:text-gray-300">
+          <p className="text-sm text-gray-300">
             © Copyright 2024. All Rights Reserved.
           </p>
 
