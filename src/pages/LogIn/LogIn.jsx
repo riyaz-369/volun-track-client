@@ -156,11 +156,11 @@ const LogIn = () => {
           <div className="flex items-center justify-between mt-4">
             <span className="w-1/5 border-b border-gray-600 md:w-1/4"></span>
 
-            <span className="text-xs text-gray-500 uppercase">
-              Don not have an account?{" "}
+            <span className="text-base text-gray-500">
+              Don't have an account?{" "}
               <Link
                 to="/register"
-                className="hover:btn-link font-bold text-[#83b446]"
+                className="hover:btn-link font-bold text-[#83b446] text-lg"
               >
                 Register
               </Link>
