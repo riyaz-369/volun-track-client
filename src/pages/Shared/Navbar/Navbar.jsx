@@ -59,7 +59,7 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to="/addCraft"
+        to="/needVolunteer"
         title="Need Volunteer to See"
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
@@ -74,8 +74,8 @@ const Navbar = () => {
   );
 
   return (
-    <div>
-      <div className="sticky top-0 z-50 shadow-sm bg-base-100 pt-2">
+    <div className="sticky top-0 z-50 py-2 bg-base-100 shadow-md">
+      <div>
         <div className="navbar max-w-7xl mx-auto">
           <div className="navbar-start">
             <div className="dropdown">
@@ -169,7 +169,7 @@ const Navbar = () => {
                       tabIndex={0}
                       className="relative inline-block dropdown-content"
                     >
-                      <div className="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right rounded-lg shadow-xl bg-[#1A1A1A]">
+                      <div className="absolute right-0 z-20 w-72 py-2 mt-2 overflow-hidden origin-top-right rounded-lg shadow-xl bg-[#1A1A1A]">
                         <a className="flex items-center p-3 -mt-2 transition-colors duration-300 transform text-gray-200 hover:bg-gray-700 hover:text-white">
                           <img
                             className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
@@ -179,7 +179,7 @@ const Navbar = () => {
                             <h1 className="font-semibold text-gray-200">
                               {user?.displayName}
                             </h1>
-                            <p className="text-base text-gray-500 dark:text-gray-400">
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
                               {user?.email}
                             </p>
                           </div>

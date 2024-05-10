@@ -78,7 +78,7 @@ const LogIn = () => {
       <Helmet>
         <title>VolunTrack | Login</title>
       </Helmet>
-      <div className="flex w-full justify-center items-center max-w-7xl mx-auto my-12">
+      <div className="flex w-full justify-center items-center max-w-7xl mx-auto">
         <div className="hidden lg:flex flex-col lg:w-1/2 border-b border-r border-gray-300">
           <Lottie animationData={loginAnm} />
         </div>
