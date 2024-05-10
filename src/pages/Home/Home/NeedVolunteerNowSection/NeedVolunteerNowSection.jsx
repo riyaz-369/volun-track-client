@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const NeedVolunteerNowSection = () => {
   const [volunteers, setVolunteers] = useState([]);
-  console.log(volunteers);
+  // console.log(volunteers);
 
   useEffect(() => {
     const getData = async () => {

@@ -1,18 +1,29 @@
+import { useLoaderData } from "react-router-dom";
+
 const VolunteerDetails = () => {
+  const volunteerDetails = useLoaderData();
+
+  const {
+    _id,
+    thumbnail,
+    post_title,
+    description,
+    category,
+    location,
+    no_of_volunteers_needed,
+    deadline,
+    organizer_name,
+    organizer_email,
+  } = volunteerDetails;
+
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
+    <div className="card card-side bg-base-100 shadow-md rounded-lg max-w-7xl mx-auto my-12">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-          alt="Movie"
-        />
+        <img src={thumbnail} alt={post_title} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Watch</button>
-        </div>
+        <h2 className="card-title">{post_title}</h2>
+        <p>{description}</p>
       </div>
     </div>
   );
