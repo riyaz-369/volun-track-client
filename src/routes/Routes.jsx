@@ -47,7 +47,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/volunteers/${params.id}`),
+          fetch(`${import.meta.env.APP_URL}/volunteers/${params.id}`),
       },
     ],
   },

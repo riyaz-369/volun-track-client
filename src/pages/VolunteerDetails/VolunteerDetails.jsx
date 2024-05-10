@@ -3,6 +3,8 @@ import { useLoaderData } from "react-router-dom";
 const VolunteerDetails = () => {
   const volunteerDetails = useLoaderData();
 
+  console.log(volunteerDetails);
+
   const {
     _id,
     thumbnail,
