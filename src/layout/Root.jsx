@@ -4,7 +4,7 @@ import Footer from "../pages/Shared/Footer/Footer";
 
 const Root = () => {
   return (
-    <div className="font-inter">
+    <div className="font-quicksand">
       <Navbar />
       <div className="min-h-[calc(100vh-299px)]">
         <Outlet />

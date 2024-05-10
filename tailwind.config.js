@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: "Inter, sans-serif",
+        quicksand: "Quicksand , sans-serif",
         ubuntu: "Ubuntu Sans Mono, monospace",
       },
     },
