@@ -36,7 +36,7 @@ const NeedVolunteerNowSection = () => {
       <div className="text-center">
         <Link
           to="/needVolunteer"
-          className="btn primary-btn btn-outline mb-12 mt-6"
+          className="btn primary-btn btn-outline mb-12 mt-6 border-none"
         >
           See All
         </Link>

@@ -170,7 +170,7 @@ const Navbar = () => {
                       className="relative inline-block dropdown-content"
                     >
                       <div className="absolute right-0 z-20 w-72 py-2 mt-2 overflow-hidden origin-top-right rounded-lg shadow-xl bg-[#1A1A1A]">
-                        <a className="flex items-center p-3 -mt-2 transition-colors duration-300 transform text-gray-200 hover:bg-gray-700 hover:text-white">
+                        <button className="flex items-center p-3 -mt-2 transition-colors duration-300 transform text-gray-200 hover:bg-gray-700 hover:text-white">
                           <img
                             className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
                             src={user?.photoURL}
@@ -183,30 +183,33 @@ const Navbar = () => {
                               {user?.email}
                             </p>
                           </div>
-                        </a>
+                        </button>
 
                         <hr className="border-[#553739]" />
 
-                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
                           <span className="mx-1">View Profile</span>
-                        </a>
+                        </Link>
 
-                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link
+                          to="/addPost"
+                          className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
                           <span className="mx-1">Add Post</span>
-                        </a>
+                        </Link>
 
-                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
                           <span className="mx-1">My Post</span>
-                        </a>
-                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        </Link>
+                        <Link className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
                           <span className="mx-1">My Volunteer Requests</span>
-                        </a>
-                        <a
+                        </Link>
+                        <button
                           onClick={handleLogOut}
                           className="flex items-center p-3 text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#955E42] font-bold"
                         >
                           <span className="">Logout</span>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
