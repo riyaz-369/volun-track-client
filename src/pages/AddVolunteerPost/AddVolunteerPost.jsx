@@ -4,15 +4,17 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import useAxiosCommon from "../../hooks/useAxiosCommon";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddVolunteerPost = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { register, handleSubmit } = useForm();
   const { user } = useAuth();
   const axiosCommon = useAxiosCommon();
+  const navigate = useNavigate();
 
   const handleAddPost = async (e) => {
-    console.log(e);
     const {
       thumbnail,
       post_title,
@@ -28,6 +30,7 @@ const AddVolunteerPost = () => {
       description,
       category,
       location,
+      deadline: startDate,
       no_of_volunteers_needed,
       organizer_name: user?.displayName,
       organizer_email: user?.email,
@@ -35,9 +38,13 @@ const AddVolunteerPost = () => {
 
     try {
       const { data } = await axiosCommon.post("/volunteers", addPostFormData);
-      console.log(data);
+      if (data.insertedId) {
+        toast.success("Post added successfully !");
+        navigate("/myPost");
+      }
     } catch (err) {
       console.log(err);
+      toast.error(err.message);
     }
   };
 

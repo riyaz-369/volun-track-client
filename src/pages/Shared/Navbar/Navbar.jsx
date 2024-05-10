@@ -198,7 +198,10 @@ const Navbar = () => {
                           <span className="mx-1">Add Post</span>
                         </Link>
 
-                        <Link className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link
+                          to="/myPost"
+                          className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
                           <span className="mx-1">My Post</span>
                         </Link>
                         <Link className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
