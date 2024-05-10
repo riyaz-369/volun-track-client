@@ -15,6 +15,7 @@
 - [Firebase](https://firebase.google.com/?gad_source=1&gclid=EAIaIQobChMIs5ywobWBhgMVcNc8Ah0DzQqyEAAYASAAEgJv7fD_BwE&gclsrc=aw.ds)
 - [React Hook Form](https://react-hook-form.com)
 - [React Icons](https://react-icons.github.io/react-icons)
+- [React Hot Toast](https://react-hot-toast.com/)
 
 ## Back-End
 

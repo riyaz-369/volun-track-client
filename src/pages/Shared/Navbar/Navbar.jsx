@@ -1,8 +1,37 @@
 import { FiAlignLeft } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+  const { user, logOut } = useAuth();
+  const handleLogOut = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout right now",
+    }).then((resulted) => {
+      if (resulted.isConfirmed) {
+        logOut()
+          .then(() => {})
+          .catch(() => {
+            Swal.fire({
+              title: "Something went wrong !",
+              icon: "warning",
+            });
+          });
+        Swal.fire({
+          title: "Successfully log out !",
+          icon: "success",
+        });
+      }
+    });
+  };
+
   const activeLink =
     "text-[#83b446] font-bold underline underline-offset-8 text-base flex items-center gap-1";
   const deActiveLink =
@@ -102,7 +131,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-md w-40 space-y-4"
+                className="menu menu-sm dropdown-content mt-3 z-10 p-2 py-6 shadow w-40 space-y-4 bg-[#1A1A1A] text-gray-200 rounded-lg"
               >
                 {navLinks}
               </ul>
@@ -121,66 +150,72 @@ const Navbar = () => {
               </ul>
             </div>
             <div className="flex items-center gap-2">
-              <div className="space-x-3 hidden lg:flex">
-                <Link to="/logIn" className="primary-btn">
-                  Login
-                </Link>
-              </div>
-              <div className="dropdown dropdown-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
-                >
-                  <div className="rounded-full">
-                    <img src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tYW4lMjBibHVlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=face&w=500&q=200" />
-                  </div>
+              {/* conditional user profile */}
+              {!user ? (
+                <div className="space-x-3 hidden lg:flex">
+                  <Link to="/logIn" className="primary-btn">
+                    Login
+                  </Link>
                 </div>
-
-                <div>
+              ) : (
+                <div className="dropdown dropdown-end">
                   <div
                     tabIndex={0}
-                    className="relative inline-block dropdown-content"
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
                   >
-                    <div className="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right bg-white rounded-md shadow-xl dark:bg-gray-800">
-                      <a className="flex items-center p-3 -mt-2 text-gray-600 transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <img
-                          className="flex-shrink-0 object-cover mx-1 rounded-full w-9 h-9"
-                          src="https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8d29tYW4lMjBibHVlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=face&w=500&q=200"
-                        />
-                        <div className="mx-1">
-                          <h1 className="font-semibold text-gray-700 dark:text-gray-200">
-                            Name
-                          </h1>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">
-                            email@exampl.com
-                          </p>
-                        </div>
-                      </a>
+                    <div className="rounded-full">
+                      <img src={user?.photoURL} />
+                    </div>
+                  </div>
+                  <div>
+                    <div
+                      tabIndex={0}
+                      className="relative inline-block dropdown-content"
+                    >
+                      <div className="absolute right-0 z-20 w-56 py-2 mt-2 overflow-hidden origin-top-right rounded-lg shadow-xl bg-[#1A1A1A]">
+                        <a className="flex items-center p-3 -mt-2 transition-colors duration-300 transform text-gray-200 hover:bg-gray-700 hover:text-white">
+                          <img
+                            className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
+                            src={user?.photoURL}
+                          />
+                          <div className="mx-1">
+                            <h1 className="font-semibold text-gray-200">
+                              {user?.displayName}
+                            </h1>
+                            <p className="text-base text-gray-500 dark:text-gray-400">
+                              {user?.email}
+                            </p>
+                          </div>
+                        </a>
 
-                      <hr className="border-gray-200 dark:border-gray-700 " />
+                        <hr className="border-[#553739]" />
 
-                      <a className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span className="mx-1">View Profile</span>
-                      </a>
+                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                          <span className="mx-1">View Profile</span>
+                        </a>
 
-                      <a className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span className="mx-1">Add Post</span>
-                      </a>
+                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                          <span className="mx-1">Add Post</span>
+                        </a>
 
-                      <a className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span className="mx-1">My Post</span>
-                      </a>
-                      <a className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span className="mx-1">My Volunteer Requests</span>
-                      </a>
-                      <a className="flex items-center p-3 text-sm text-gray-600 capitalize transition-colors duration-300 transform dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
-                        <span className="mx-1">Logout</span>
-                      </a>
+                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                          <span className="mx-1">My Post</span>
+                        </a>
+                        <a className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                          <span className="mx-1">My Volunteer Requests</span>
+                        </a>
+                        <a
+                          onClick={handleLogOut}
+                          className="flex items-center p-3 text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#955E42] font-bold"
+                        >
+                          <span className="">Logout</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
