@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import useAxiosCommon from "../../hooks/useAxiosCommon";
-import { Link } from "react-router-dom";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { FiEdit } from "react-icons/fi";
 import { MdOutlineCancel } from "react-icons/md";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const MyVolunteerReq = () => {
   const [myReq, setMyReq] = useState([]);
@@ -12,14 +11,42 @@ const MyVolunteerReq = () => {
   const axiosCommon = useAxiosCommon();
 
   useEffect(() => {
-    const getData = async () => {
-      const { data } = await axiosCommon(
-        `/volunteerRequests?email=${user?.email}`
-      );
-      setMyReq(data);
-    };
     getData();
   }, [user]);
+
+  const getData = async () => {
+    const { data } = await axiosCommon(
+      `/volunteerRequests?email=${user?.email}`
+    );
+    setMyReq(data);
+  };
+
+  const handleCancel = (id) => {
+    try {
+      Swal.fire({
+        title: "Are you sure?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#748E54",
+        cancelButtonColor: "#553739",
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          axiosCommon.delete(`/volunteerRequests/${id}`).then((data) => {
+            if (data.data.deletedCount > 0) {
+              Swal.fire({
+                title: "Canceled your volunteer request.",
+                icon: "success",
+              });
+            }
+            getData();
+          });
+        }
+      });
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
 
   return (
     <div className="overflow-x-auto max-w-7xl mx-auto my-12">
@@ -46,7 +73,7 @@ const MyVolunteerReq = () => {
               <td>{req.category}</td>
               <td>{req.no_of_volunteers_needed}</td>
               <td>{new Date(req.deadline).toLocaleDateString()}</td>
-              <td className="flex gap-4 text-3xl">
+              <td className="flex gap-4 text-3xl text-red-500">
                 <button
                   onClick={() => handleCancel(req._id)}
                   className="hover:text-[#a86340]"
