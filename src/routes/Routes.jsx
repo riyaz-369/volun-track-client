@@ -11,6 +11,7 @@ import AddVolunteerPost from "../pages/AddVolunteerPost/AddVolunteerPost";
 import MyPost from "../pages/MyPost/MyPost";
 import UpdatePost from "../pages/MyPost/UpdatePost";
 import BeAVolunteerPage from "../pages/BeAVolunteerPage/BeAVolunteerPage";
+import MyVolunteerReq from "../pages/MyVolunteerReq/MyVolunteerReq";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/volunteers/${params.id}`),
+      },
+      {
+        path: "/myVolunteerReq",
+        element: (
+          <PrivateRoute>
+            <MyVolunteerReq />
+          </PrivateRoute>
+        ),
       },
     ],
   },

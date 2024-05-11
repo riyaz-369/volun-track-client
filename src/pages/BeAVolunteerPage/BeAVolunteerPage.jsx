@@ -55,7 +55,6 @@ const BeAVolunteerPage = () => {
         "/volunteerRequests",
         volunteerReqData
       );
-      console.log(data);
       if (data.insertedId) {
         Swal.fire({
           icon: "success",
