@@ -1,7 +1,14 @@
+import { useLoaderData } from "react-router-dom";
+import NeedVolunteerCard from "./NeedVolunteerCard";
+
 const NeedVolunteer = () => {
+  const needVolunteers = useLoaderData();
+
   return (
-    <div>
-      <h1>NeedVolunteer</h1>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto my-12">
+      {needVolunteers.map((volunteer) => (
+        <NeedVolunteerCard key={volunteer._id} volunteer={volunteer} />
+      ))}
     </div>
   );
 };

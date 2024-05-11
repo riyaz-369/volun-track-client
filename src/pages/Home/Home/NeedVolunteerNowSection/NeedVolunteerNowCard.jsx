@@ -13,15 +13,18 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
     deadline,
     organizer_name,
     organizer_email,
-  } = volunteer;
+  } = volunteer || {};
 
   return (
     <Link
       to={`/volunteerDetails/${_id}`}
-      className="overflow-hidden rounded-lg shadow-md hover:scale-[1.03] transition-all duration-300"
+      className="overflow-hidden rounded-lg shadow-md"
     >
       <figure>
-        <img className="object-cover w-full h-64" src={thumbnail} />
+        <img
+          className="object-cover w-full h-64 hover:scale-105 transition-all duration-300"
+          src={thumbnail}
+        />
       </figure>
       <div className="p-6">
         <div>
@@ -29,21 +32,24 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
             {category}
           </span>
           <h3
-            className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-300 transform hover:underline"
+            className="block mt-2 text-2xl font-semibold transition-colors duration-300 transform hover:underline opacity-90"
             role="link"
           >
             {post_title}
           </h3>
-          <p title={description} className="mt-2 text-sm text-gray-700">
+          <p title={description} className="mt-2 text-sm opacity-90">
             {description.substring(0, 80)}...
+          </p>
+          <p className="mt-4 font-semibold">
+            Deadline: <span className="font-medium">{deadline}</span>
           </p>
         </div>
         <div className="mt-4">
           <Link
             to={`/volunteerDetails/${_id}`}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 justify-end"
           >
-            <span className="font-semibold">View Details</span>
+            <span className="font-semibold ">View Details</span>
             <span className="text-[#955E42]">
               <FaArrowRightLong />
             </span>

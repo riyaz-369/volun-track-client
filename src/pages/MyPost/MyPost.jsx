@@ -13,15 +13,14 @@ const MyPost = () => {
   const [myPosts, setMyPosts] = useState([]);
 
   useEffect(() => {
+    const getData = async () => {
+      const { data } = await axiosCommon(
+        `/volunteers-email?email=${user?.email}`
+      );
+      setMyPosts(data);
+    };
     getData();
   }, [user]);
-
-  const getData = async () => {
-    const { data } = await axiosCommon(
-      `/volunteers-email?email=${user?.email}`
-    );
-    setMyPosts(data);
-  };
 
   const handleDelete = (id) => {
     try {
@@ -38,13 +37,14 @@ const MyPost = () => {
             .delete(`/volunteers/${id}`)
             .then((data) => {
               console.log(data);
-              if (data.deletedCount > 0) {
+              if (data.data.deletedCount > 0) {
                 Swal.fire({
                   title: "Deleted!",
                   text: "Your volunteer post deleted.",
                   icon: "success",
                 });
-                getData();
+                const remaining = myPosts.filter((myPost) => myPost._id !== id);
+                setMyPosts(remaining);
               }
             })
             .catch(() => {
@@ -72,7 +72,8 @@ const MyPost = () => {
             <th></th>
             <th>Post Title</th>
             <th>Category</th>
-            <th>Deadline Color</th>
+            <th>No. of Volunteer</th>
+            <th>Deadline</th>
             <th>Acton</th>
           </tr>
         </thead>
@@ -82,6 +83,7 @@ const MyPost = () => {
               <th>{idx + 1}</th>
               <td>{myPost.post_title}</td>
               <td>{myPost.category}</td>
+              <td>{myPost.no_of_volunteers_needed}</td>
               <td>{new Date(myPost.deadline).toLocaleDateString()}</td>
               <td className="flex gap-4 text-xl">
                 <Link
