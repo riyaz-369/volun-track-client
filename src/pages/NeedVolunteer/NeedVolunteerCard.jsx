@@ -16,7 +16,7 @@ const NeedVolunteerCard = ({ volunteer }) => {
     <div className="card card-compact rounded-lg shadow-md overflow-hidden">
       <figure>
         <img
-          className="hover:scale-105 transition-all duration-300"
+          className="hover:scale-105 transition-all duration-300 h-64"
           src={thumbnail}
           alt={post_title}
         />

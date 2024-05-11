@@ -18,42 +18,26 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
   return (
     <Link
       to={`/volunteerDetails/${_id}`}
-      className="overflow-hidden rounded-lg shadow-md"
+      className="card card-compact rounded-lg shadow-md overflow-hidden p-4"
     >
       <figure>
         <img
-          className="object-cover w-full h-64 hover:scale-105 transition-all duration-300"
+          className="hover:scale-105 transition-all duration-300 h-64 rounded-lg"
           src={thumbnail}
+          alt={post_title}
         />
       </figure>
-      <div className="p-6">
-        <div>
-          <span className=" text-[#7fad45] font-bold uppercase">
-            {category}
-          </span>
-          <h3
-            className="block mt-2 text-2xl font-semibold transition-colors duration-300 transform hover:underline opacity-90"
-            role="link"
-          >
-            {post_title}
-          </h3>
-          <p title={description} className="mt-2 text-sm opacity-90">
-            {description.substring(0, 80)}...
-          </p>
-          <p className="mt-4 font-semibold">
-            Deadline: <span className="font-medium">{deadline}</span>
-          </p>
-        </div>
-        <div className="mt-4">
-          <Link
-            to={`/volunteerDetails/${_id}`}
-            className="flex items-center gap-2 justify-end"
-          >
-            <span className="font-semibold ">View Details</span>
-            <span className="text-[#955E42]">
-              <FaArrowRightLong />
-            </span>
-          </Link>
+      <div className="card-body">
+        <span className=" text-[#7fad45] font-bold uppercase">{category}</span>
+        <h2 className="card-title text-2xl font-semibold transition-colors duration-300 transform hover:underline opacity-90">
+          {post_title}
+        </h2>
+        <p title={description}>{description.substring(0, 80)}...</p>
+        <p className="my-4 font-semibold">
+          Deadline: <span className="font-medium">{deadline}</span>
+        </p>
+        <div className="card-actions ">
+          <button className="primary-btn w-full">View Details</button>
         </div>
       </div>
     </Link>
