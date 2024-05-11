@@ -1,4 +1,3 @@
-import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const NeedVolunteerNowCard = ({ volunteer }) => {
@@ -34,7 +33,10 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
         </h2>
         <p title={description}>{description.substring(0, 80)}...</p>
         <p className="my-4 font-semibold">
-          Deadline: <span className="font-medium">{deadline}</span>
+          Deadline:{" "}
+          <span className="font-medium">
+            {new Date(deadline).toLocaleDateString()}
+          </span>
         </p>
         <div className="card-actions ">
           <button className="primary-btn w-full">View Details</button>

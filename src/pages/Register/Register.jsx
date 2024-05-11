@@ -38,7 +38,7 @@ const Register = () => {
           });
           setTimeout(() => {
             navigate("/");
-          }, 3000);
+          }, 1500);
         })
         .catch((error) => {
           if (error.code) {

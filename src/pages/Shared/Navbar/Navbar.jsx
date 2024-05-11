@@ -160,7 +160,7 @@ const Navbar = () => {
                     role="button"
                     className="btn btn-ghost btn-circle avatar"
                   >
-                    <div className="rounded-full">
+                    <div title={user?.displayName} className="rounded-full">
                       <img src={user?.photoURL} />
                     </div>
                   </div>

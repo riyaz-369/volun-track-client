@@ -41,7 +41,7 @@ const LogIn = () => {
           });
           setTimeout(() => {
             navigate(location?.state ? location.state : "/");
-          }, 2500);
+          }, 1500);
         })
         .catch((error) => {
           const errorMsg = error.code.slice(5, 12);
@@ -62,7 +62,7 @@ const LogIn = () => {
         });
         setTimeout(() => {
           navigate(location?.state ? location.state : "/");
-        }, 2500);
+        }, 1500);
       })
       .catch(() => {
         Swal.fire({

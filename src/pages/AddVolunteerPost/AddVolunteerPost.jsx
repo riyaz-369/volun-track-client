@@ -34,6 +34,7 @@ const AddVolunteerPost = () => {
       no_of_volunteers_needed,
       organizer_name: user?.displayName,
       organizer_email: user?.email,
+      organizer_photo: user?.photoURL,
     };
 
     try {

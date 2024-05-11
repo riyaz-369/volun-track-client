@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const NeedVolunteerCard = ({ volunteer }) => {
   const {
     _id,
@@ -24,9 +26,9 @@ const NeedVolunteerCard = ({ volunteer }) => {
       <div className="card-body">
         <h2 className="card-title">{post_title}</h2>
         <p title={description}>{description.substring(0, 80)}...</p>
-        <div className="card-actions ">
+        <Link to={`/volunteerDetails/${_id}`}>
           <button className="primary-btn w-full">View Details</button>
-        </div>
+        </Link>
       </div>
     </div>
   );

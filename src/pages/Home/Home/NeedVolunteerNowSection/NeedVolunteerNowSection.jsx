@@ -1,19 +1,19 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import NeedVolunteerNowCard from "./NeedVolunteerNowCard";
 import { Link } from "react-router-dom";
+import useAxiosCommon from "../../../../hooks/useAxiosCommon";
 
 const NeedVolunteerNowSection = () => {
   const [volunteers, setVolunteers] = useState([]);
-  // console.log(volunteers);
+  const axiosCommon = useAxiosCommon();
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios("http://localhost:5000/volunteers");
+      const { data } = await axiosCommon("/volunteers");
       setVolunteers(data);
     };
     getData();
-  }, []);
+  }, [axiosCommon]);
 
   return (
     <div>

@@ -14,7 +14,8 @@ const VolunteerDetails = () => {
     deadline,
     organizer_name,
     organizer_email,
-  } = volunteerDetails;
+    organizer_photo,
+  } = volunteerDetails || {};
 
   return (
     <div className=" max-w-7xl mx-auto my-12">
@@ -64,8 +65,8 @@ const VolunteerDetails = () => {
             <div>
               <div className="space-y-1">
                 <img
-                  className="w-16 rounded-lg"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                  className="w-16 rounded-lg mt-4 md:mt-0"
+                  src={organizer_photo}
                 />
                 <h3 className="font-semibold">Organizer Information:</h3>
                 <h3>
@@ -78,7 +79,7 @@ const VolunteerDetails = () => {
               </div>
             </div>
           </div>
-          <Link to={`/beVolunteer/${_id}`}>
+          <Link className="mt-4" to={`/beVolunteer/${_id}`}>
             <button className="primary-btn w-full lg:w-1/2">
               Be a Volunteer
             </button>
