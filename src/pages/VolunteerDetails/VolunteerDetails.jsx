@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const VolunteerDetails = () => {
   const volunteerDetails = useLoaderData();
@@ -78,9 +78,11 @@ const VolunteerDetails = () => {
               </div>
             </div>
           </div>
-          <div className="card-actions mt-4">
-            <button className="primary-btn w-full">Be a Volunteer</button>
-          </div>
+          <Link to={`/beVolunteer/${_id}`}>
+            <button className="primary-btn w-full lg:w-1/2">
+              Be a Volunteer
+            </button>
+          </Link>
         </div>
       </div>
     </div>
