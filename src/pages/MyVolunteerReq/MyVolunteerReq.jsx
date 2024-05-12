@@ -4,6 +4,7 @@ import useAxiosCommon from "../../hooks/useAxiosCommon";
 import { MdOutlineCancel } from "react-icons/md";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const MyVolunteerReq = () => {
   const [myReq, setMyReq] = useState([]);
@@ -50,6 +51,9 @@ const MyVolunteerReq = () => {
 
   return (
     <div className="overflow-x-auto max-w-7xl mx-auto my-12">
+      <Helmet>
+        <title>My Volunteer Request</title>
+      </Helmet>
       <h3 className="text-center text-[#8cbd51] mb-6 text-3xl font-ubuntu">
         My Volunteer Requests:{" "}
         <span className="text-[#a86340]">{myReq.length}</span>

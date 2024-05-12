@@ -6,6 +6,7 @@ import useAuth from "../../hooks/useAuth";
 import useAxiosCommon from "../../hooks/useAxiosCommon";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AddVolunteerPost = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -51,6 +52,9 @@ const AddVolunteerPost = () => {
 
   return (
     <div className="max-w-4xl mx-auto my-12">
+      <Helmet>
+        <title>Add Volunteer Post</title>
+      </Helmet>
       <h3 className="text-3xl font-semibold text-center underline underline-offset-8 font-ubuntu text-[#8cbd51] mb-4">
         Add Your Volunteer Post
       </h3>

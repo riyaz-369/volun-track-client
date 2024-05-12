@@ -4,6 +4,7 @@ import useAxiosCommon from "../../hooks/useAxiosCommon";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { GrPowerReset } from "react-icons/gr";
+import { Helmet } from "react-helmet";
 
 const NeedVolunteer = () => {
   const axiosCommon = useAxiosCommon();
@@ -59,6 +60,9 @@ const NeedVolunteer = () => {
 
   return (
     <section className=" max-w-7xl mx-auto my-12">
+      <Helmet>
+        <title>Need Volunteer</title>
+      </Helmet>
       <div className="mb-8">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">
           <div>

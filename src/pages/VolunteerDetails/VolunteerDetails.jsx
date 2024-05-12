@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const VolunteerDetails = () => {
@@ -19,6 +20,9 @@ const VolunteerDetails = () => {
 
   return (
     <div className=" max-w-7xl mx-auto my-12">
+      <Helmet>
+        <title>Details - {post_title}</title>
+      </Helmet>
       <div className="text-center mb-8">
         <div className="flex flex-col items-center">
           <h2 className="text-3xl font-semibold mb-2">

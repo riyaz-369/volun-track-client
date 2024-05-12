@@ -52,7 +52,7 @@ const Register = () => {
     <div>
       <div>
         <Helmet>
-          <title>VolunTrack | Login</title>
+          <title>VolunTrack - Register</title>
         </Helmet>
         <div className="flex flex-row-reverse w-full justify-center items-center max-w-7xl mx-auto my-12">
           <div className="hidden lg:flex flex-col lg:w-1/2 border-b border-l border-gray-300">
