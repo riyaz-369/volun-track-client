@@ -29,14 +29,14 @@ const NeedVolunteerNowSection = () => {
 
       {/* volunteer need now card */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {volunteers.map((volunteer) => (
+        {volunteers.slice(0, 6).map((volunteer) => (
           <NeedVolunteerNowCard key={volunteer._id} volunteer={volunteer} />
         ))}
       </div>
       <div className="text-center">
         <Link
           to="/needVolunteer"
-          className="btn primary-btn btn-outline mb-12 mt-6 border-none"
+          className="btn secondary-btn mb-12 mt-6 border-none text-base"
         >
           See All
         </Link>

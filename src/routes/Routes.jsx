@@ -34,7 +34,6 @@ const router = createBrowserRouter([
       {
         path: "/needVolunteer",
         element: <NeedVolunteer />,
-        loader: () => fetch(`${import.meta.env.VITE_API_URL}/volunteers`),
       },
       {
         path: "/addPost",

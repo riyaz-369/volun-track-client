@@ -50,6 +50,10 @@ const BeAVolunteerPage = () => {
       },
     };
 
+    if (organizer_email === user?.email) {
+      return toast.error("Action not permitted !");
+    }
+
     try {
       const { data } = await axiosCommon.post(
         "/volunteerRequests",
@@ -66,6 +70,12 @@ const BeAVolunteerPage = () => {
           navigate("/myVolunteerReq");
         }, 1500);
       }
+    } catch (err) {
+      toast.error(err.message);
+    }
+
+    try {
+      await axiosCommon.patch(`/volunteerRequests/${_id}`);
     } catch (err) {
       toast.error(err.message);
     }
@@ -214,7 +224,7 @@ const BeAVolunteerPage = () => {
           </div>
           <div className="mt-4">
             <label className="block mb-2 text-sm font-medium text-gray-600">
-              Your Email Address
+              Your Name
             </label>
             <input
               className="block w-full px-4 py-2  border rounded-lg border-gray-600 focus:border-[#553739] focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-[#553739]"

@@ -63,7 +63,7 @@ const MyPost = () => {
   return (
     <div className="overflow-x-auto max-w-7xl mx-auto my-12">
       <h3 className="text-center text-[#8cbd51] mb-6 text-3xl font-ubuntu">
-        My Volunteer Post:{" "}
+        My Need Volunteer Post:{" "}
         <span className="text-[#a86340]">{myPosts.length}</span>
       </h3>
       <table className="table">
