@@ -43,7 +43,7 @@ const Banner = () => {
                     </p>
                     <Link
                       to="/needVolunteer"
-                      className="btn btn-outline btn-sm lg:btn-md text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] md:px-6"
+                      className="btn btn-outline btn-sm lg:btn-md rounded-full text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] md:px-6"
                     >
                       Need Volunteer
                     </Link>
@@ -73,7 +73,7 @@ const Banner = () => {
                     </p>
                     <Link
                       to="/needVolunteer"
-                      className="btn btn-outline btn-sm lg:btn-md text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] hover:text-black  md:px-6"
+                      className="btn btn-outline btn-sm lg:btn-md rounded-full text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] hover:text-black  md:px-6"
                     >
                       Need Volunteer
                     </Link>
@@ -104,7 +104,7 @@ const Banner = () => {
                     </p>
                     <Link
                       to="/needVolunteer"
-                      className="btn btn-outline btn-sm lg:btn-md text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] hover:text-black  md:px-6"
+                      className="btn btn-outline btn-sm lg:btn-md rounded-full text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] hover:text-black  md:px-6"
                     >
                       Need Volunteer
                     </Link>
@@ -134,7 +134,7 @@ const Banner = () => {
                     </p>
                     <Link
                       to="/needVolunteer"
-                      className="btn btn-outline btn-sm lg:btn-md text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] hover:text-black  md:px-6"
+                      className="btn btn-outline btn-sm lg:btn-md rounded-full text-gray-200 text-xs md:text-sm lg:text-base border-[#8cbd51] hover:bg-[#955E42] hover:border-[#955E42] hover:text-black  md:px-6"
                     >
                       Need Volunteer
                     </Link>

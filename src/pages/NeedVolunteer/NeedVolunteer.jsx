@@ -72,7 +72,7 @@ const NeedVolunteer = () => {
               onChange={handleFilterByCategory}
               name="category"
               value={filter}
-              className="border py-2 px-4 rounded-lg"
+              className="border py-1 px-4 rounded-full"
             >
               <option value="">All</option>
               <option value="Health Care">Health Care</option>
@@ -83,24 +83,24 @@ const NeedVolunteer = () => {
             </select>
           </div>
           <form onSubmit={handleSearch}>
-            <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-border-[#553739] focus-within:ring-[#553739]">
+            <div className="flex p-1 overflow-hidden rounded-full">
               <input
                 onChange={(e) => setSearchText(e.target.value)}
                 value={searchText}
-                className="py-1 px-4 rounded-lg text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent"
+                className="py-1 px-4 border rounded-l-full text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent"
                 type="text"
                 name="search"
                 placeholder="Enter Post Title"
                 aria-label="Enter Post Title"
               />
-              <button className="px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
+              <button className="px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-r-full hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
                 <FaMagnifyingGlass />
               </button>
             </div>
           </form>
           <button
             onClick={handleReset}
-            className="flex items-center gap-1 px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none py-1"
+            className="flex items-center gap-1 px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-full hover:bg-gray-600 focus:bg-gray-600 focus:outline-none py-1"
           >
             <GrPowerReset /> <span>Reset</span>
           </button>
@@ -130,7 +130,7 @@ const NeedVolunteer = () => {
                 key={btnNumber}
                 className={`hidden ${
                   currentPage === btnNumber ? "bg-[#80a058] text-white" : ""
-                } px-6 py-1 mx-1 transition-colors duration-300 transform rounded-lg sm:inline hover:bg-[#748E54] font-bold hover:text-white`}
+                } px-6 py-1 mx-1 transition-colors duration-300 transform rounded-full sm:inline hover:bg-[#748E54] font-bold hover:text-white`}
               >
                 {btnNumber}
               </button>

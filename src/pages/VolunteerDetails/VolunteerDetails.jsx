@@ -84,7 +84,7 @@ const VolunteerDetails = () => {
             </div>
           </div>
           <Link className="mt-4" to={`/beVolunteer/${_id}`}>
-            <button className="primary-btn w-full lg:w-1/2">
+            <button className="primary-btn btn w-full lg:w-1/2">
               Be a Volunteer
             </button>
           </Link>

@@ -189,7 +189,7 @@ const UpdatePost = () => {
             />
           </div>
         </div>
-        <button className="primary-btn w-full mt-4">Update Post</button>
+        <button className="primary-btn btn w-full mt-6">Update Post</button>
       </form>
     </div>
   );

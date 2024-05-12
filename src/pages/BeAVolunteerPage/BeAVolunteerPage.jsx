@@ -261,7 +261,7 @@ const BeAVolunteerPage = () => {
             </select>
           </div>
         </div>
-        <button className="primary-btn w-full mt-4">Request</button>
+        <button className="primary-btn btn w-full mt-6">Request</button>
       </form>
     </div>
   );

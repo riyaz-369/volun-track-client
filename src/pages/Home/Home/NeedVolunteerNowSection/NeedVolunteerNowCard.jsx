@@ -8,11 +8,11 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
   return (
     <Link
       to={`/volunteerDetails/${_id}`}
-      className="card card-compact rounded-lg shadow-md overflow-hidden p-4 bg-[#955E42] bg-opacity-[0.02]"
+      className="card card-compact rounded-3xl shadow-md overflow-hidden p-4 bg-[#955E42] bg-opacity-[0.02]"
     >
       <figure>
         <img
-          className="hover:scale-105 transition-all duration-300 h-64 rounded-lg"
+          className="hover:scale-105 transition-all duration-300 h-64 rounded-3xl"
           src={thumbnail}
           alt={post_title}
         />
@@ -30,7 +30,7 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
           </span>
         </p>
         <div className="card-actions ">
-          <button className="primary-btn w-full">View Details</button>
+          <button className="primary-btn w-full btn">View Details</button>
         </div>
       </div>
     </Link>

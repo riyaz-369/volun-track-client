@@ -170,7 +170,7 @@ const AddVolunteerPost = () => {
             />
           </div>
         </div>
-        <button className="primary-btn w-full mt-4">Add Post</button>
+        <button className="primary-btn btn w-full mt-6">Add Post</button>
       </form>
     </div>
   );
