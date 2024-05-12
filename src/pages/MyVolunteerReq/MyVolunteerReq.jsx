@@ -5,6 +5,8 @@ import { MdOutlineCancel } from "react-icons/md";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import Lottie from "lottie-react";
+import empty from "../../assets/animation/empty.json";
 
 const MyVolunteerReq = () => {
   const [myReq, setMyReq] = useState([]);
@@ -58,37 +60,43 @@ const MyVolunteerReq = () => {
         My Volunteer Requests:{" "}
         <span className="text-[#a86340]">{myReq.length}</span>
       </h3>
-      <table className="table">
-        <thead>
-          <tr className="text-base">
-            <th></th>
-            <th>Post Title</th>
-            <th>Category</th>
-            <th>No. of Volunteer</th>
-            <th>Deadline</th>
-            <th>Acton</th>
-          </tr>
-        </thead>
-        <tbody>
-          {myReq.map((req, idx) => (
-            <tr className="text-base" key={req._id}>
-              <th>{idx + 1}</th>
-              <td>{req.post_title}</td>
-              <td>{req.category}</td>
-              <td>{req.no_of_volunteers_needed}</td>
-              <td>{new Date(req.deadline).toLocaleDateString()}</td>
-              <td className="flex gap-4 text-3xl text-red-500">
-                <button
-                  onClick={() => handleCancel(req._id)}
-                  className="hover:text-[#a86340]"
-                >
-                  <MdOutlineCancel />
-                </button>
-              </td>
+      {myReq.length ? (
+        <table className="table">
+          <thead>
+            <tr className="text-base">
+              <th></th>
+              <th>Post Title</th>
+              <th>Category</th>
+              <th>No. of Volunteer</th>
+              <th>Deadline</th>
+              <th>Acton</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {myReq.map((req, idx) => (
+              <tr className="text-base" key={req._id}>
+                <th>{idx + 1}</th>
+                <td>{req.post_title}</td>
+                <td>{req.category}</td>
+                <td>{req.no_of_volunteers_needed}</td>
+                <td>{new Date(req.deadline).toLocaleDateString()}</td>
+                <td className="flex gap-4 text-3xl text-red-500">
+                  <button
+                    onClick={() => handleCancel(req._id)}
+                    className="hover:text-[#a86340]"
+                  >
+                    <MdOutlineCancel />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="flex items-center justify-center">
+          <Lottie className="w-2/5" animationData={empty} />
+        </div>
+      )}
     </div>
   );
 };

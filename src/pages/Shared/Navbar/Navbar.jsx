@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import { CgLogOut } from "react-icons/cg";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
@@ -90,7 +91,7 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-10 p-2 py-6 shadow w-40 space-y-4 bg-[#1A1A1A] text-gray-200 rounded-lg"
+                className="menu menu-sm dropdown-content mt-3 z-10 p-6 shadow w-52 space-y-6 bg-[#1A1A1A] text-gray-200 rounded-lg"
               >
                 {navLinks}
               </ul>
@@ -171,7 +172,7 @@ const Navbar = () => {
                       className="relative inline-block dropdown-content"
                     >
                       <div className="absolute right-0 z-20 w-72 py-2 mt-2 overflow-hidden origin-top-right rounded-lg shadow-xl bg-[#1A1A1A]">
-                        <button className="flex items-center p-3 -mt-2 transition-colors duration-300 transform text-gray-200 hover:bg-gray-700 hover:text-white">
+                        <div className="flex items-center p-3 -mt-2 transition-colors duration-300 transform text-gray-200 hover:bg-gray-700 hover:text-white">
                           <img
                             className="flex-shrink-0 object-cover mx-1 rounded-full w-12 h-12"
                             src={user?.photoURL}
@@ -184,39 +185,42 @@ const Navbar = () => {
                               {user?.email}
                             </p>
                           </div>
-                        </button>
+                        </div>
 
                         <hr className="border-[#553739]" />
 
-                        <Link className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white">
                           <span className="mx-1">View Profile</span>
                         </Link>
 
                         <Link
                           to="/addPost"
-                          className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white"
+                          className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
                         >
                           <span className="mx-1">Add Post</span>
                         </Link>
 
                         <Link
                           to="/myPost"
-                          className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white"
+                          className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
                         >
                           <span className="mx-1">My Post</span>
                         </Link>
                         <Link
                           to="/myVolunteerReq"
-                          className="flex items-center p-3 text-base transition-colors duration-300 transform text-gray-300 hover:bg-gray-700 hover:text-white"
+                          className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
                         >
                           <span className="mx-1">My Volunteer Requests</span>
                         </Link>
-                        <button
+                        <Link
                           onClick={handleLogOut}
-                          className="flex items-center p-3 text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#955E42] font-bold"
+                          className="flex items-center gap-1 p-3 text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#cf7a4f] font-bold"
                         >
+                          <span className="text-xl">
+                            <CgLogOut />
+                          </span>
                           <span className="">Logout</span>
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>

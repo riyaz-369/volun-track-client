@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import Banner from "./Banner/Banner";
 import NeedVolunteerNowSection from "./NeedVolunteerNowSection/NeedVolunteerNowSection";
+import UpcomingEvent from "../UpcomingEvent/UpcomingEvent";
 
 const Home = () => {
   return (
@@ -13,6 +14,9 @@ const Home = () => {
       </div>
       <div className="max-w-7xl mx-auto">
         <NeedVolunteerNowSection />
+      </div>
+      <div className="mb-12 mt-6">
+        <UpcomingEvent />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const NeedVolunteerCard = ({ volunteer }) => {
   const { _id, thumbnail, post_title, description, category, deadline } =
@@ -7,7 +8,7 @@ const NeedVolunteerCard = ({ volunteer }) => {
   return (
     <Link
       to={`/volunteerDetails/${_id}`}
-      className="card card-compact rounded-lg shadow-md overflow-hidden"
+      className="card card-compact rounded-lg shadow-md overflow-hidden bg-[#955E42] bg-opacity-[0.02]"
     >
       <figure>
         <img
@@ -20,7 +21,7 @@ const NeedVolunteerCard = ({ volunteer }) => {
         <span className=" text-[#7fad45] font-bold uppercase">{category}</span>
         <h2 className="card-title text-2xl hover:underline">{post_title}</h2>
         <p title={description}>{description.substring(0, 80)}...</p>
-        <p className="my-4 font-semibold">
+        <p className="mt-4 mb-1 font-semibold">
           Deadline:{" "}
           <span className="font-medium">
             {new Date(deadline).toLocaleDateString()}
@@ -33,3 +34,7 @@ const NeedVolunteerCard = ({ volunteer }) => {
 };
 
 export default NeedVolunteerCard;
+
+NeedVolunteerCard.propTypes = {
+  volunteer: PropTypes.object,
+};

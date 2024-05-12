@@ -25,21 +25,21 @@ const VolunteerDetails = () => {
       </Helmet>
       <div className="text-center mb-8">
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl font-semibold mb-2">
+          <h2 className="text-3xl font-semibold mb-2 border-b-2 pb-2 border-[#8cbd51]">
             Join Us as a Volunteer
           </h2>
           <p className="w-2/3 text-sm lg:text-base opacity-80">
             Become a part of our community and make a difference! By
-            volunteering with us, you'll have the opportunity to contribute your
-            time and skills towards meaningful projects that positively impact
-            others. Whether it's supporting healthcare initiatives, tutoring
-            students, or participating in community clean-up efforts, your
-            dedication can create lasting change. Join us today and be a
+            volunteering with us, you will have the opportunity to contribute
+            your time and skills towards meaningful projects that positively
+            impact others. Whether it is supporting healthcare initiatives,
+            tutoring students, or participating in community clean-up efforts,
+            your dedication can create lasting change. Join us today and be a
             volunteer for a brighter tomorrow!
           </p>
         </div>
       </div>
-      <div className="card lg:card-side bg-base-100 shadow-md rounded-lg">
+      <div className="card lg:card-side bg-base-100 shadow-md rounded-lg bg-[#955E42] bg-opacity-[0.02]">
         <figure>
           <img
             className="rounded-lg h-full bg-cover"

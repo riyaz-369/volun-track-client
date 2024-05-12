@@ -7,6 +7,8 @@ import toast from "react-hot-toast";
 import useAxiosCommon from "../../hooks/useAxiosCommon";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import empty from "../../assets/animation/empty.json";
+import Lottie from "lottie-react";
 
 const MyPost = () => {
   const { user } = useAuth();
@@ -62,51 +64,57 @@ const MyPost = () => {
   };
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto my-12">
+    <div className="overflow-x-auto max-w-7xl mx-auto mt-12">
       <Helmet>
         <title>My Need Volunteer Posts</title>
       </Helmet>
-      <h3 className="text-center text-[#8cbd51] mb-6 text-3xl font-ubuntu">
+      <h3 className="text-center text-[#8cbd51] text-3xl font-ubuntu">
         My Need Volunteer Post:{" "}
         <span className="text-[#a86340]">{myPosts.length}</span>
       </h3>
-      <table className="table">
-        <thead>
-          <tr className="text-base">
-            <th></th>
-            <th>Post Title</th>
-            <th>Category</th>
-            <th>No. of Volunteer</th>
-            <th>Deadline</th>
-            <th>Acton</th>
-          </tr>
-        </thead>
-        <tbody>
-          {myPosts.map((myPost, idx) => (
-            <tr className="text-base" key={myPost._id}>
-              <th>{idx + 1}</th>
-              <td>{myPost.post_title}</td>
-              <td>{myPost.category}</td>
-              <td>{myPost.no_of_volunteers_needed}</td>
-              <td>{new Date(myPost.deadline).toLocaleDateString()}</td>
-              <td className="flex gap-4 text-xl">
-                <Link
-                  to={`/update/${myPost._id}`}
-                  className="hover:text-[#8cbd51]"
-                >
-                  <FiEdit />
-                </Link>
-                <button
-                  onClick={() => handleDelete(myPost._id)}
-                  className="hover:text-[#a86340]"
-                >
-                  <RiDeleteBin6Line />
-                </button>
-              </td>
+      {myPosts.length ? (
+        <table className="table">
+          <thead>
+            <tr className="text-base">
+              <th></th>
+              <th>Post Title</th>
+              <th>Category</th>
+              <th>No. of Volunteer</th>
+              <th>Deadline</th>
+              <th>Acton</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {myPosts.map((myPost, idx) => (
+              <tr className="text-base" key={myPost._id}>
+                <th>{idx + 1}</th>
+                <td>{myPost.post_title}</td>
+                <td>{myPost.category}</td>
+                <td>{myPost.no_of_volunteers_needed}</td>
+                <td>{new Date(myPost.deadline).toLocaleDateString()}</td>
+                <td className="flex gap-4 text-xl">
+                  <Link
+                    to={`/update/${myPost._id}`}
+                    className="hover:text-[#8cbd51]"
+                  >
+                    <FiEdit />
+                  </Link>
+                  <button
+                    onClick={() => handleDelete(myPost._id)}
+                    className="hover:text-[#a86340]"
+                  >
+                    <RiDeleteBin6Line />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="flex items-center justify-center">
+          <Lottie className="w-2/5" animationData={empty} />
+        </div>
+      )}
     </div>
   );
 };
