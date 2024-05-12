@@ -97,9 +97,10 @@ const Navbar = () => {
             </div>
             <Link
               title="VolunTrack | Home"
-              className="text-xl md:text-3xl font-bold text-[#955E42]"
+              className="text-xl md:text-3xl font-bold text-[#955E42] flex items-center gap-2 hover:scale-[1.03] transition-all"
             >
-              <h1 className="hover:scale-[1.03] transition-all">VolunTrack</h1>
+              <img className="w-7 md:w-9" src="/vt.png" />
+              <h1>VolunTrack</h1>
             </Link>
           </div>
           <div className="navbar-end flex gap-12">

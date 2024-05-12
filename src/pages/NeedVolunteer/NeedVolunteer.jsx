@@ -7,21 +7,25 @@ import { GrPowerReset } from "react-icons/gr";
 
 const NeedVolunteer = () => {
   const axiosCommon = useAxiosCommon();
+  const [volunteers, setVolunteers] = useState([]);
 
   const [cardPerPage, setCardPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
   const [dataCount, setDataCount] = useState(0);
-  const [volunteers, setVolunteers] = useState([]);
+  const [search, setSearch] = useState("");
+  const [searchText, setSearchText] = useState("");
+
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
     const getData = async () => {
       const { data } = await axiosCommon(
-        `/totalVolunteers?page=${currentPage}&size=${cardPerPage}`
+        `/totalVolunteers?page=${currentPage}&size=${cardPerPage}&filter=${filter}&search=${search}`
       );
       setVolunteers(data);
     };
     getData();
-  }, [currentPage, cardPerPage]);
+  }, [currentPage, cardPerPage, filter, search]);
 
   useEffect(() => {
     const getCount = async () => {
@@ -38,14 +42,30 @@ const NeedVolunteer = () => {
     setCurrentPage(value);
   };
 
+  const handleFilterByCategory = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const handleReset = () => {
+    setFilter("");
+    setSearch("");
+    setSearchText("");
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearch(searchText);
+  };
+
   return (
     <section className=" max-w-7xl mx-auto my-12">
       <div className="mb-8">
         <div className="flex flex-col md:flex-row justify-center items-center gap-5 ">
           <div>
             <select
+              onChange={handleFilterByCategory}
               name="category"
-              id="category"
+              value={filter}
               className="border py-2 px-4 rounded-lg"
             >
               <option value="">Filter By Category</option>
@@ -56,22 +76,26 @@ const NeedVolunteer = () => {
               <option value="Environment">Environment</option>
             </select>
           </div>
-          <form>
+          <form onSubmit={handleSearch}>
             <div className="flex p-1 overflow-hidden border rounded-lg focus-within:ring focus-within:ring-opacity-40 focus-within:border-border-[#553739] focus-within:ring-[#553739]">
               <input
+                onChange={(e) => setSearchText(e.target.value)}
+                value={searchText}
                 className="py-1 px-4 rounded-lg text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent"
                 type="text"
                 name="search"
                 placeholder="Enter Post Title"
                 aria-label="Enter Post Title"
               />
-
               <button className="px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none">
                 <FaMagnifyingGlass />
               </button>
             </div>
           </form>
-          <button className="flex items-center gap-1 px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none py-1">
+          <button
+            onClick={handleReset}
+            className="flex items-center gap-1 px-4 font-medium tracking-wider text-white uppercase transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:bg-gray-600 focus:outline-none py-1"
+          >
             <GrPowerReset /> <span>Reset</span>
           </button>
         </div>

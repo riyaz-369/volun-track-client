@@ -1,18 +1,16 @@
-import { Link } from "react-router-dom";
-
 const Footer = () => {
   return (
     <footer className="bg-[#1A1A1A] text-gray-200">
       <div className="py-8 max-w-7xl mx-auto">
         <div className="">
-          <Link to="/">
-            <img
-              className="w-auto h-7"
-              src="https://merakiui.com/images/full-logo.svg"
-              alt=""
-            />
-          </Link>
-          <div className="">
+          <div className="flex items-center gap-2">
+            <h1 className="text-xl md:text-3xl font-bold text-[#955E42]">
+              VolunTrack
+            </h1>
+            <img className="w-7 md:w-9" src="/vt.png" />
+          </div>
+
+          <div className="opacity-80">
             <span className="text-sm text-gray-300 space-y-2 text-start">
               <p className="mt-8 text-base">Contact</p>
               <p>
@@ -33,7 +31,7 @@ const Footer = () => {
 
         <hr className="my-6 md:my-8 border-gray-700" />
 
-        <div className="flex flex-col items-center sm:flex-row sm:justify-between">
+        <div className="flex flex-col items-center sm:flex-row sm:justify-between opacity-80">
           <p className="text-sm text-gray-300">
             © Copyright 2024. All Rights Reserved.
           </p>
