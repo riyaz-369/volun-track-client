@@ -23,7 +23,7 @@ const Footer = () => {
                 </p>
               </span>
             </div>
-            <div className="">
+            <div className="mt-4">
               <h1 className="text-xl font-semibold">
                 Subscribe our newsletter
               </h1>

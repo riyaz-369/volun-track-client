@@ -1,6 +1,6 @@
 const Team = () => {
   return (
-    <section className="">
+    <section className="px-2 lg:px-0">
       <div className="text-center flex flex-col items-center mb-8">
         <p
           data-aos="fade-right"

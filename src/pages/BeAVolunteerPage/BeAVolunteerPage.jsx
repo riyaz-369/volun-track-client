@@ -85,11 +85,11 @@ const BeAVolunteerPage = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-12">
+    <div className="max-w-4xl mx-auto my-8 lg:my-12 px-2 lg:px-0">
       <Helmet>
         <title>Be a Volunteer - {post_title}</title>
       </Helmet>
-      <h3 className="text-3xl font-semibold text-center underline underline-offset-8 font-ubuntu text-[#8cbd51] mb-4">
+      <h3 className="text-2xl lg:text-3xl font-semibold text-center underline underline-offset-8 font-ubuntu text-[#8cbd51] mb-4">
         Be a Volunteer
       </h3>
       <form onSubmit={handleSubmit(handleVolunteerRequests)}>

@@ -11,7 +11,7 @@ const Home = () => {
       <Helmet>
         <title>VolunTrack - Home</title>
       </Helmet>
-      <div className="mb-16">
+      <div className="mb-6 lg:mb-16">
         <Banner />
       </div>
       <div className="max-w-7xl mx-auto">

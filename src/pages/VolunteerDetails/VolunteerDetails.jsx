@@ -19,7 +19,7 @@ const VolunteerDetails = () => {
   } = volunteerDetails || {};
 
   return (
-    <div className=" max-w-7xl mx-auto my-12">
+    <div className=" max-w-7xl mx-auto my-8 lg:my-12 px-2 lg:px-0">
       <Helmet>
         <title>Details - {post_title}</title>
       </Helmet>

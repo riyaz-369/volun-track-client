@@ -66,11 +66,23 @@ const Navbar = () => {
       >
         Need Volunteer
       </NavLink>
-      <div className="space-y-3 lg:hidden">
-        <Link to="/logIn" className="primary-btn">
-          Login
+      {!user ? (
+        <div className="space-y-3 lg:hidden">
+          <Link to="/logIn" className="primary-btn">
+            Login
+          </Link>
+        </div>
+      ) : (
+        <Link
+          onClick={handleLogOut}
+          className="flex items-center gap-1 px-1 py-2 rounded-lg text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#cf7a4f] font-bold"
+        >
+          <span className="text-xl">
+            <CgLogOut />
+          </span>
+          <span className="">Logout</span>
         </Link>
-      </div>
+      )}
     </>
   );
 

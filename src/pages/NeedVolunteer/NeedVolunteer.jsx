@@ -107,7 +107,7 @@ const NeedVolunteer = () => {
         </div>
       </div>
       {volunteers.length ? (
-        <div>
+        <div className="lg:px-0 px-2">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {volunteers.map((volunteer) => (
               <NeedVolunteerCard key={volunteer._id} volunteer={volunteer} />
@@ -128,7 +128,7 @@ const NeedVolunteer = () => {
               <button
                 onClick={() => handlePagination(btnNumber)}
                 key={btnNumber}
-                className={`hidden ${
+                className={`${
                   currentPage === btnNumber ? "bg-[#80a058] text-white" : ""
                 } px-6 py-1 mx-1 transition-colors duration-300 transform rounded-full sm:inline hover:bg-[#748E54] font-bold hover:text-white`}
               >

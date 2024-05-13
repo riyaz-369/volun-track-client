@@ -54,11 +54,11 @@ const MyVolunteerReq = () => {
   };
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto my-12">
+    <div className="overflow-x-auto max-w-7xl mx-auto my-8 lg:my-12 px-2 lg:px-0">
       <Helmet>
         <title>My Volunteer Request</title>
       </Helmet>
-      <h3 className="text-center text-[#8cbd51] mb-6 text-3xl font-ubuntu">
+      <h3 className="text-center text-[#8cbd51] mb-6 text-2xl lg:text-3xl font-ubuntu">
         My Volunteer Requests:{" "}
         <span className="text-[#a86340]">{myReq.length}</span>
       </h3>

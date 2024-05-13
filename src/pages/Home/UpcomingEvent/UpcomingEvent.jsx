@@ -1,7 +1,7 @@
 const UpcomingEvent = () => {
   return (
     <section className="bg-[#1A1A1A]">
-      <div className="max-w-7xl mx-auto py-10">
+      <div className="max-w-7xl mx-auto py-10 px-4 lg:px-0">
         <div className="text-white ">
           <p
             data-aos="fade-right"

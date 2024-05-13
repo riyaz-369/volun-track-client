@@ -40,7 +40,6 @@ const MyPost = () => {
           axiosCommon
             .delete(`/volunteers/${id}`)
             .then((data) => {
-              console.log(data);
               if (data.data.deletedCount > 0) {
                 Swal.fire({
                   title: "Deleted!",
@@ -65,11 +64,11 @@ const MyPost = () => {
   };
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto mt-12">
+    <div className="overflow-x-auto max-w-7xl mx-auto mt-8 lg:mt-12 px-2 lg:px-0">
       <Helmet>
         <title>My Need Volunteer Posts</title>
       </Helmet>
-      <h3 className="text-center text-[#8cbd51] text-3xl font-ubuntu">
+      <h3 className="text-center text-[#8cbd51] text-2xl lg:text-3xl font-ubuntu">
         My Need Volunteer Post:{" "}
         <span className="text-[#a86340]">{myPosts.length}</span>
       </h3>

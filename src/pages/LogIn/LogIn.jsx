@@ -82,8 +82,8 @@ const LogIn = () => {
         <div className="hidden lg:flex flex-col lg:w-1/2 border-b border-r border-gray-300">
           <Lottie animationData={loginAnm} />
         </div>
-        <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-          <p className="mb-6 lg:mb-12 text-center lg:text-start text-3xl font-semibold">
+        <div className="w-full px-2 lg:px-6 py-8 md:px-8 lg:w-1/2">
+          <p className="mb-6 lg:mb-12 text-center lg:text-start text-2xl lg:text-3xl font-semibold">
             Login Your Account
           </p>
           <a

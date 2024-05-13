@@ -3,7 +3,6 @@ import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
-import useAxiosCommon from "../../hooks/useAxiosCommon";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -26,6 +25,9 @@ const AddVolunteerPost = () => {
       no_of_volunteers_needed,
     } = e;
 
+    if (no_of_volunteers_needed == 0)
+      return toast.error("Volunteers numbers minimum 1 or many.");
+
     const addPostFormData = {
       thumbnail,
       post_title,
@@ -46,20 +48,19 @@ const AddVolunteerPost = () => {
         navigate("/myPost");
       }
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
     }
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-12">
+    <div className="max-w-4xl mx-auto my-8 lg:my-12">
       <Helmet>
         <title>Add Volunteer Post</title>
       </Helmet>
-      <h3 className="text-3xl font-semibold text-center underline underline-offset-8 font-ubuntu text-[#8cbd51] mb-4">
+      <h3 className="text-2xl lg:text-3xl font-semibold text-center underline underline-offset-8 font-ubuntu text-[#8cbd51] mb-4">
         Add Your Volunteer Post
       </h3>
-      <form onSubmit={handleSubmit(handleAddPost)}>
+      <form onSubmit={handleSubmit(handleAddPost)} className="px-2 lg:px-0">
         <div className="lg:grid grid-cols-2 gap-x-6">
           <div className="mt-4">
             <label className="block mb-2 text-sm font-medium text-gray-600">

@@ -58,8 +58,8 @@ const Register = () => {
           <div className="hidden lg:flex flex-col lg:w-1/2 border-b border-l border-gray-300 mt-10">
             <Lottie animationData={loginAnm} />
           </div>
-          <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-            <p className="mb-6 text-center lg:text-start text-3xl font-semibold">
+          <div className="w-full px-2 lg:px-6 py-8 md:px-8 lg:w-1/2">
+            <p className="mb-6 text-center lg:text-start text-2xl lg:text-3xl font-semibold">
               Register Your Account
             </p>
             {/* registration form */}
@@ -126,7 +126,7 @@ const Register = () => {
               </div>
 
               <div className="mt-6">
-                <button className="w-full primary-btn btn">Login</button>
+                <button className="w-full primary-btn btn">Register</button>
               </div>
             </form>
 
