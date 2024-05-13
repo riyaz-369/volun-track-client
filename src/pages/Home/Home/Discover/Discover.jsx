@@ -1,17 +1,17 @@
 const Discover = () => {
   return (
-    <section className="relative max-w-7xl mx-auto mb-52">
-      <div className="">
-        <div className="overflow-hidden lg:flex">
+    <section className="max-w-7xl mx-auto lg:mb-60 relative">
+      <div>
+        <div className="overflow-hidden flex-col-reverse lg:flex lg:flex-row">
           <div
-            className="bg-cover rounded-3xl h-[556px] w-full lg:w-1/2"
+            className="bg-cover rounded-3xl h-[312px] md:h-[596px] w-full lg:w-1/2"
             style={{
               backgroundImage:
                 "url('https://i.ibb.co/jLKQv9Q/photo-1582213782179-e0d53f98f2ca-q-80-w-2070-auto-format-fit-crop-ixlib-rb-4-0.jpg')",
             }}
           ></div>
-          <div className="w-1/2 p-12">
-            <h2 className="text-2xl font-bold md:text-4xl lg:text-5xl">
+          <div className="lg:w-1/2 px-6 md:px-12 lg:py-12 mt-52 lg:mt-0">
+            <h2 className="text-2xl font-bold md:text-3xl lg:text-5xl">
               Discover How We are Making A Difference And How You Can Get
               Involved.
             </h2>
@@ -31,29 +31,35 @@ const Discover = () => {
         </div>
       </div>
       <div className="flex justify-center items-center">
-        <div className="py-20 max-w-5xl rounded-3xl flex justify-around w-full mx-auto mb-12 shadow-md bg-[#1A1A1A] absolute -bottom-48">
+        <div className=" border text-center border-b-8 border-[#955E42] flex items-center space-y-4 md:space-y-0 py-6 px-6 md:py-12 lg:py-20 w-4/5 md:max-w-2xl lg:max-w-5xl rounded-3xl flex-col md:flex-row md:flex justify-center md:justify-around mx-auto md:mb-8 shadow-md bg-[#1A1A1A] absolute bottom-96 lg:-bottom-52">
           <div className="text-white flex items-center gap-2">
             <div>
-              <p className="font-semibold text-xl mb-4 opacity-80">
+              <p className="font-semibold lg:text-xl md:mb-4 opacity-80">
                 Volunteer Hours Logged
               </p>
-              <h3 className="text-5xl font-bold">5,000 +</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#8cbd51]">
+                5,000 +
+              </h3>
             </div>
           </div>
           <div className="text-white flex items-center gap-2">
             <div>
-              <p className="font-semibold text-xl mb-4 opacity-80">
+              <p className="font-semibold lg:text-xl md:mb-4 opacity-80">
                 Food Distributed
               </p>
-              <h3 className="text-5xl font-bold">30,000</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#8cbd51]">
+                30,000
+              </h3>
             </div>
           </div>
           <div className="text-white flex items-center gap-2">
             <div>
-              <p className="font-semibold text-xl mb-4 opacity-80">
+              <p className="font-semibold lg:text-xl md:mb-4 opacity-80">
                 Funds Raised
               </p>
-              <h3 className="text-5xl font-bold">1,50,000 TK</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-5xl font-bold text-[#8cbd51]">
+                1,50,000 TK
+              </h3>
             </div>
           </div>
         </div>

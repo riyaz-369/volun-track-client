@@ -18,7 +18,7 @@ const NeedVolunteerNowSection = () => {
   return (
     <div>
       <div className="text-center flex justify-center items-center flex-col space-y-2 mb-6">
-        <h1 className="text-4xl font-semibold border-b-2 pb-2 border-[#8cbd51]">
+        <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold border-b-2 pb-2 border-[#8cbd51]">
           Volunteer Needs Now
         </h1>
         <p className="w-2/3">
@@ -38,7 +38,7 @@ const NeedVolunteerNowSection = () => {
       <div className="text-center">
         <Link
           to="/needVolunteer"
-          className="btn secondary-btn mb-12 mt-6 border-none text-base"
+          className="btn primary-btn mb-12 mt-6 border-none text-base"
         >
           See All
         </Link>

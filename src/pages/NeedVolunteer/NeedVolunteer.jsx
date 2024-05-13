@@ -61,12 +61,12 @@ const NeedVolunteer = () => {
   };
 
   return (
-    <section className=" max-w-7xl mx-auto my-12">
+    <section className=" max-w-7xl mx-auto mb-12 mt-8">
       <Helmet>
         <title>Need Volunteer</title>
       </Helmet>
       <div className="mb-8">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-5 bg-[#955E42] bg-opacity-5 p-4 rounded-lg">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-5 bg-[#955E42] bg-opacity-5 p-4 rounded-3xl">
           <div>
             <select
               onChange={handleFilterByCategory}
@@ -87,7 +87,7 @@ const NeedVolunteer = () => {
               <input
                 onChange={(e) => setSearchText(e.target.value)}
                 value={searchText}
-                className="py-1 px-4 border rounded-l-full text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent"
+                className="py-1 px-4 border border-r-0 rounded-l-full text-gray-700 placeholder-gray-500 outline-none focus:placeholder-transparent"
                 type="text"
                 name="search"
                 placeholder="Enter Post Title"
