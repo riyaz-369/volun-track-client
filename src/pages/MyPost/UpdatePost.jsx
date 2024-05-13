@@ -6,13 +6,14 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import ReactDatePicker from "react-datepicker";
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const UpdatePost = () => {
   const updateVolunteerPost = useLoaderData();
 
   const { register, handleSubmit } = useForm();
   const { user } = useAuth();
-  const axiosCommon = useAxiosCommon();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
 
   const {
@@ -50,7 +51,7 @@ const UpdatePost = () => {
     };
 
     try {
-      const { data } = await axiosCommon.put(
+      const { data } = await axiosSecure.put(
         `/volunteers/${_id}`,
         updatePostData
       );

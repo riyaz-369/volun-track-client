@@ -7,12 +7,13 @@ import useAxiosCommon from "../../hooks/useAxiosCommon";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const AddVolunteerPost = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { register, handleSubmit } = useForm();
   const { user } = useAuth();
-  const axiosCommon = useAxiosCommon();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
 
   const handleAddPost = async (e) => {
@@ -39,7 +40,7 @@ const AddVolunteerPost = () => {
     };
 
     try {
-      const { data } = await axiosCommon.post("/volunteers", addPostFormData);
+      const { data } = await axiosSecure.post("/volunteers", addPostFormData);
       if (data.insertedId) {
         toast.success("Post added successfully !");
         navigate("/myPost");

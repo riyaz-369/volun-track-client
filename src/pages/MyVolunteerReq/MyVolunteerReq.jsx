@@ -7,18 +7,20 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import Lottie from "lottie-react";
 import empty from "../../assets/animation/empty.json";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyVolunteerReq = () => {
   const [myReq, setMyReq] = useState([]);
   const { user } = useAuth();
   const axiosCommon = useAxiosCommon();
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     getData();
   }, [user]);
 
   const getData = async () => {
-    const { data } = await axiosCommon(
+    const { data } = await axiosSecure(
       `/volunteerRequests?email=${user?.email}`
     );
     setMyReq(data);

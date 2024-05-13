@@ -7,23 +7,26 @@ const NeedVolunteerNowCard = ({ volunteer }) => {
 
   return (
     <Link
+      data-aos="fade-up"
       to={`/volunteerDetails/${_id}`}
-      className="card card-compact rounded-3xl shadow-md overflow-hidden p-4 bg-[#955E42] bg-opacity-[0.02]"
+      className="card card-compact rounded-3xl shadow-md overflow-hidden bg-[#955E42] bg-opacity-[0.02]"
     >
       <figure>
         <img
-          className="hover:scale-105 transition-all duration-300 h-64 rounded-3xl"
+          className="hover:scale-105 transition-all duration-300 h-64 w-full"
           src={thumbnail}
           alt={post_title}
         />
       </figure>
       <div className="card-body">
         <span className=" text-[#7fad45] font-bold uppercase">{category}</span>
-        <h2 className="card-title text-2xl font-semibold transition-colors duration-300 transform hover:underline opacity-90">
+        <h2 className="card-title text-2xl font-bold transition-colors duration-300 transform hover:underline opacity-90">
           {post_title}
         </h2>
-        <p title={description}>{description.substring(0, 80)}...</p>
-        <p className="mt-4 mb-1 font-semibold">
+        <p className="text-base" title={description}>
+          {description.substring(0, 80)}...
+        </p>
+        <p className="mt-4 mb-1 font-semibold text-base">
           Deadline:{" "}
           <span className="font-medium">
             {new Date(deadline).toLocaleDateString()}

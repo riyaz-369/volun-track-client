@@ -3,14 +3,23 @@ const UpcomingEvent = () => {
     <section className="bg-[#1A1A1A]">
       <div className="max-w-7xl mx-auto py-10">
         <div className="text-white ">
-          <p className="uppercase font-medium opacity-80 border-b-2 pb-1 border-[#8cbd51] w-1/3 lg:w-1/6 mb-4">
+          <p
+            data-aos="fade-right"
+            className="uppercase font-medium opacity-80 border-b-2 pb-1 border-[#8cbd51] w-1/3 lg:w-1/6 mb-4"
+          >
             upcoming event
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold lg:w-2/5">
+          <h2
+            data-aos="fade-up"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold lg:w-2/5"
+          >
             Stay Update With Our Latest Events.
           </h2>
         </div>
-        <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+        <div
+          data-aos="fade-up"
+          className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3"
+        >
           <div
             className="overflow-hidden bg-cover rounded-3xl cursor-pointer h-72 group border-8 shadow-lg shadow-[#8cbd5173] hover:shadow-[#8cbd51] duration-700"
             style={{

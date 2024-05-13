@@ -17,7 +17,10 @@ const NeedVolunteerNowSection = () => {
 
   return (
     <div>
-      <div className="text-center flex justify-center items-center flex-col space-y-2 mb-6">
+      <div
+        data-aos="fade-up"
+        className="text-center flex justify-center items-center flex-col space-y-2 mb-6"
+      >
         <h1 className="text-2xl md:text-3xl lg:text-5xl font-semibold border-b-2 pb-2 border-[#8cbd51]">
           Volunteer Needs Now
         </h1>
@@ -35,7 +38,7 @@ const NeedVolunteerNowSection = () => {
           <NeedVolunteerNowCard key={volunteer._id} volunteer={volunteer} />
         ))}
       </div>
-      <div className="text-center">
+      <div data-aos="fade-up" className="text-center">
         <Link
           to="/needVolunteer"
           className="btn primary-btn mb-12 mt-6 border-none text-base"

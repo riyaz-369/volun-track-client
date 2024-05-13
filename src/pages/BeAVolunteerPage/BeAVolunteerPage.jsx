@@ -7,6 +7,7 @@ import ReactDatePicker from "react-datepicker";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const BeAVolunteerPage = () => {
   const beVolunteer = useLoaderData();
@@ -14,6 +15,7 @@ const BeAVolunteerPage = () => {
   const { register, handleSubmit } = useForm();
   const { user } = useAuth();
   const axiosCommon = useAxiosCommon();
+  const axiosSecure = useAxiosSecure();
   const navigate = useNavigate();
 
   const {
@@ -56,7 +58,7 @@ const BeAVolunteerPage = () => {
     }
 
     try {
-      const { data } = await axiosCommon.post(
+      const { data } = await axiosSecure.post(
         "/volunteerRequests",
         volunteerReqData
       );

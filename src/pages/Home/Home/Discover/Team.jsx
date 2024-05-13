@@ -2,16 +2,25 @@ const Team = () => {
   return (
     <section className="">
       <div className="text-center flex flex-col items-center mb-8">
-        <p className="uppercase font-medium border-b-2 pb-1 border-[#8cbd51] w-1/3 lg:w-1/6 mb-4">
+        <p
+          data-aos="fade-right"
+          className="uppercase font-medium border-b-2 pb-1 border-[#8cbd51] w-1/3 lg:w-1/6 mb-4"
+        >
           Meet Our Team
         </p>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold lg:w-2/5">
+        <h2
+          data-aos="fade-up"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold lg:w-2/5"
+        >
           Make Difference Today with The Team
         </h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* team 1 */}
-        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
+        <div
+          data-aos="fade-up"
+          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
+        >
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"
@@ -24,7 +33,10 @@ const Team = () => {
           </div>
         </div>
         {/* team 2 */}
-        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
+        <div
+          data-aos="fade-up"
+          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
+        >
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"
@@ -39,7 +51,10 @@ const Team = () => {
           </div>
         </div>
         {/* team 3 */}
-        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
+        <div
+          data-aos="fade-up"
+          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
+        >
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"
@@ -54,7 +69,10 @@ const Team = () => {
           </div>
         </div>
         {/* team 4 */}
-        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
+        <div
+          data-aos="fade-up"
+          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
+        >
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"

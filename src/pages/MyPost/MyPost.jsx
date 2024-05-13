@@ -9,15 +9,16 @@ import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import empty from "../../assets/animation/empty.json";
 import Lottie from "lottie-react";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const MyPost = () => {
   const { user } = useAuth();
   const axiosCommon = useAxiosCommon();
   const [myPosts, setMyPosts] = useState([]);
-
+  const axiosSecure = useAxiosSecure();
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axiosCommon(
+      const { data } = await axiosSecure(
         `/volunteers-email?email=${user?.email}`
       );
       setMyPosts(data);

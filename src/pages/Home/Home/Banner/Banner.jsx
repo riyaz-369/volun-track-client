@@ -32,7 +32,7 @@ const Banner = () => {
             <div className=" bg-gradient-to-r from-[#030712] to-80% h-full">
               <div className=" max-w-7xl mx-auto flex items-center h-full">
                 <div>
-                  <div>
+                  <div data-aos="fade-up">
                     <h1 className="mb-2 lg:mb-5 text-2xl md:text-4xl lg:text-6xl font-bold text-white w-2/3">
                       Join Hands for Change{" "}
                       <span className="text-[#8cbd51]">our Society</span>
@@ -61,7 +61,7 @@ const Banner = () => {
             <div className=" bg-gradient-to-r from-[#030712] to-80% h-full">
               <div className=" max-w-7xl mx-auto flex items-center h-full">
                 <div>
-                  <div>
+                  <div data-aos="fade-up">
                     <h1 className="mb-2 lg:mb-5 text-2xl md:text-4xl lg:text-6xl font-bold text-white w-2/3">
                       Empowering Health,{" "}
                       <span className="text-[#8cbd51]">One Volunteer</span> {""}
@@ -91,7 +91,7 @@ const Banner = () => {
             <div className=" bg-gradient-to-r from-[#030712] to-80% h-full">
               <div className=" max-w-7xl mx-auto flex items-center h-full">
                 <div>
-                  <div>
+                  <div data-aos="fade-up">
                     <h1 className="mb-2 lg:mb-5 text-2xl md:text-4xl lg:text-6xl font-bold text-white w-2/3">
                       Empower Minds, Shape Futures,{" "}
                       <span className="text-[#8cbd51]">Education for All</span>
@@ -122,7 +122,7 @@ const Banner = () => {
             <div className=" bg-gradient-to-r from-[#030712] to-80% h-full">
               <div className=" max-w-7xl mx-auto flex items-center h-full">
                 <div>
-                  <div>
+                  <div data-aos="fade-up">
                     <h1 className="mb-2 lg:mb-5 text-2xl md:text-4xl lg:text-6xl font-bold text-white w-2/3">
                       Compassion for Creatures,{" "}
                       <span className="text-[#8cbd51]">Volunteer with Us</span>
