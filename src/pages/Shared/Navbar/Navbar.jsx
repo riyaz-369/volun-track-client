@@ -75,7 +75,7 @@ const Navbar = () => {
       ) : (
         <Link
           onClick={handleLogOut}
-          className="flex items-center gap-1 px-1 py-2 rounded-lg text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#cf7a4f] font-bold"
+          className="flex items-center gap-1 px-1 py-2 rounded-lg text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#cf7a4f] font-bold lg:hidden"
         >
           <span className="text-xl">
             <CgLogOut />

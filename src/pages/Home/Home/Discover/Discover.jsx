@@ -86,7 +86,6 @@ const Discover = () => {
                   decimals={0}
                   decimal=","
                 ></CountUp>
-                {""} TK
               </h3>
             </div>
           </div>
