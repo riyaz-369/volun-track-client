@@ -201,7 +201,10 @@ const Navbar = () => {
 
                         <hr className="border-[#553739]" />
 
-                        <Link className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white">
+                        <Link
+                          to="/profile"
+                          className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
                           <span className="mx-1">View Profile</span>
                         </Link>
 

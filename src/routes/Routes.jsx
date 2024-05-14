@@ -12,6 +12,7 @@ import MyPost from "../pages/MyPost/MyPost";
 import UpdatePost from "../pages/MyPost/UpdatePost";
 import BeAVolunteerPage from "../pages/BeAVolunteerPage/BeAVolunteerPage";
 import MyVolunteerReq from "../pages/MyVolunteerReq/MyVolunteerReq";
+import Profile from "../pages/Profile/Profile";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
       {
         path: "/needVolunteer",
