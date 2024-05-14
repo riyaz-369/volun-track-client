@@ -25,10 +25,9 @@ const NeedVolunteerNowSection = () => {
           Volunteer Needs Now
         </h1>
         <p className="w-2/3 text-sm lg:text-base">
-          Explore our Volunteer Needs Now section to discover urgent
-          opportunities for making a difference.Dive into our latest volunteer
-          needs and join us in addressing pressing challenges and creating
-          positive change.
+          Discover urgent opportunities for making a difference.Dive into our
+          latest volunteer needs and join us in addressing pressing challenges
+          and creating positive change.
         </p>
       </div>
 

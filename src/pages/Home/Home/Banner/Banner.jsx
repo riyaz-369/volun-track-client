@@ -99,8 +99,7 @@ const Banner = () => {
                     <p className="mb-3 lg:mb-5 text-white max-w-xs md:max-w-sm lg:max-w-md text-xs lg:text-base opacity-80 drop-shadow-2xl">
                       Join us in making education accessible to all. From
                       tutoring and mentoring to organizing educational workshops
-                      and resources, your involvement can ignite a passion for
-                      learning and unlock endless opportunities for individuals.
+                      and resources.
                     </p>
                     <Link
                       to="/needVolunteer"

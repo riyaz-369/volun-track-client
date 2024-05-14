@@ -6,7 +6,7 @@ const NeedVolunteerTable = ({ volunteer, idx }) => {
     volunteer || {};
 
   return (
-    <tr className="text-base">
+    <tr className="text-base hover">
       <th>{idx + 1}</th>
       <td>{post_title}</td>
       <td>{category}</td>

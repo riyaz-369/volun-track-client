@@ -148,27 +148,29 @@ const NeedVolunteer = () => {
                 ))}
               </div>
             ) : (
-              <table className="table rounded-3xl">
-                <thead>
-                  <tr className="text-base">
-                    <th></th>
-                    <th>Post Title</th>
-                    <th>Category</th>
-                    <th>No. of Volunteer</th>
-                    <th>Deadline</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {volunteers.map((volunteer, idx) => (
-                    <NeedVolunteerTable
-                      key={volunteer._id}
-                      volunteer={volunteer}
-                      idx={idx}
-                    />
-                  ))}
-                </tbody>
-              </table>
+              <div className="overflow-x-auto">
+                <table className="table">
+                  <thead>
+                    <tr className="text-base">
+                      <th></th>
+                      <th>Post Title</th>
+                      <th>Category</th>
+                      <th>No. of Volunteer</th>
+                      <th>Deadline</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {volunteers.map((volunteer, idx) => (
+                      <NeedVolunteerTable
+                        key={volunteer._id}
+                        volunteer={volunteer}
+                        idx={idx}
+                      />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
 
             {/* pagination */}
