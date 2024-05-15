@@ -60,7 +60,8 @@ const VolunteerDetails = () => {
                 {no_of_volunteers_needed}
               </p>
               <p>
-                <span className=" font-semibold">Deadline:</span> {deadline}
+                <span className=" font-semibold">Deadline:</span>{" "}
+                {new Date(deadline).toLocaleDateString()}
               </p>
               <p>
                 <span className=" font-semibold">Location:</span> {location}
