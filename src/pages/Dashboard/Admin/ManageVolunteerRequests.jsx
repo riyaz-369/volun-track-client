@@ -8,7 +8,7 @@ import { GiConfirmed } from "react-icons/gi";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
-const VolunteerRequests = () => {
+const ManageVolunteerRequests = () => {
   const axiosSecure = useAxiosSecure();
 
   const {
@@ -146,4 +146,4 @@ const VolunteerRequests = () => {
   );
 };
 
-export default VolunteerRequests;
+export default ManageVolunteerRequests;

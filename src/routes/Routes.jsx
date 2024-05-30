@@ -11,7 +11,7 @@ import UpdatePost from "../pages/MyPost/UpdatePost";
 import BeAVolunteerPage from "../pages/BeAVolunteerPage/BeAVolunteerPage";
 import Profile from "../pages/Profile/Profile";
 import DashboardLayout from "../layout/DashboardLayout";
-import VolunteerRequests from "../pages/Dashboard/Admin/VolunteerRequests";
+import ManageVolunteerRequests from "../pages/Dashboard/Admin/ManageVolunteerRequests";
 import MyVolunteerReq from "../pages/Dashboard/User/MyVolunteerReq";
 import AddPost from "../pages/Dashboard/Common/AddPost";
 import MyPost from "../pages/Dashboard/Common/MyPost";
@@ -112,7 +112,7 @@ const router = createBrowserRouter([
         path: "volunteerRequests",
         element: (
           <PrivateRoute>
-            <VolunteerRequests />
+            <ManageVolunteerRequests />
           </PrivateRoute>
         ),
       },

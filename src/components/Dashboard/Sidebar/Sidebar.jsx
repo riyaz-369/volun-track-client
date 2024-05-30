@@ -91,7 +91,7 @@ const Sidebar = () => {
                 }
               >
                 <FaCodePullRequest className="w-5 h-5" />
-                <span className="mx-3">Volunteer Requests</span>
+                <span className="mx-3">Manage Volunteer Requests</span>
               </NavLink>
 
               {/* for user */}
