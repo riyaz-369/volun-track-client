@@ -2,32 +2,13 @@ import { FiAlignLeft } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useAuth from "../../../hooks/useAuth";
-import Swal from "sweetalert2";
-import { CgLogOut } from "react-icons/cg";
+import { CgLogOut, CgProfile } from "react-icons/cg";
+import useLogOut from "../../../hooks/useLogOut";
+import { MdDashboard } from "react-icons/md";
 
 const Navbar = () => {
-  const { user, logOut } = useAuth();
-  const handleLogOut = () => {
-    Swal.fire({
-      title: "Are you sure?",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#748E54",
-      cancelButtonColor: "#553739",
-      confirmButtonText: "Yes",
-    }).then((resulted) => {
-      if (resulted.isConfirmed) {
-        logOut()
-          .then(() => {})
-          .catch(() => {
-            Swal.fire({
-              title: "Something went wrong !",
-              icon: "warning",
-            });
-          });
-      }
-    });
-  };
+  const { user } = useAuth();
+  const handleLogOut = useLogOut();
 
   const activeLink =
     "text-[#83b446] font-bold underline underline-offset-8 text-base flex items-center gap-1";
@@ -58,6 +39,12 @@ const Navbar = () => {
         className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
       >
         Home
+      </NavLink>
+      <NavLink
+        to="/dashboard"
+        className={({ isActive }) => (isActive ? activeLink : deActiveLink)}
+      >
+        Dashboard
       </NavLink>
       <NavLink
         to="/needVolunteer"
@@ -205,36 +192,24 @@ const Navbar = () => {
                           to="/profile"
                           className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
                         >
-                          <span className="mx-1">View Profile</span>
-                        </Link>
-
-                        <Link
-                          to="/addPost"
-                          className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
-                        >
-                          <span className="mx-1">Add Post</span>
-                        </Link>
-
-                        <Link
-                          to="/myPost"
-                          className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
-                        >
-                          <span className="mx-1">My Post</span>
+                          <CgProfile size={25} />
+                          <span className="mx-2">View Profile</span>
                         </Link>
                         <Link
-                          to="/myVolunteerReq"
+                          to="/dashboard"
                           className="flex items-center p-3 text-base transition-colors duration-300 font-medium transform text-gray-300 hover:bg-gray-700 hover:text-white"
                         >
-                          <span className="mx-1">My Volunteer Requests</span>
+                          <MdDashboard size={25} />
+                          <span className="mx-2">Dashboard</span>
                         </Link>
                         <Link
                           onClick={handleLogOut}
-                          className="flex items-center gap-1 p-3 text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#cf7a4f] font-bold"
+                          className="flex items-center gap-2 p-3 text-base transition-colors duration-300 transform hover:bg-gray-700 text-[#cf7a4f] font-bold"
                         >
-                          <span className="text-xl">
-                            <CgLogOut />
+                          <span>
+                            <CgLogOut size={25} />
                           </span>
-                          <span className="">Logout</span>
+                          <span>Logout</span>
                         </Link>
                       </div>
                     </div>

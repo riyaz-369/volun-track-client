@@ -39,13 +39,9 @@ const VolunteerDetails = () => {
           </p>
         </div>
       </div>
-      <div className="card lg:card-side bg-base-100 shadow-md rounded-lg bg-[#955E42] bg-opacity-[0.02]">
+      <div className="card lg:card-side shadow-md rounded-3xl bg-[#955E42] bg-opacity-[0.02]">
         <figure>
-          <img
-            className="rounded-lg h-full bg-cover"
-            src={thumbnail}
-            alt={post_title}
-          />
+          <img className="h-full bg-cover" src={thumbnail} alt={post_title} />
         </figure>
         <div className="card-body">
           <span className=" text-[#7fad45] text-sm font-bold uppercase">

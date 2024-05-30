@@ -1,5 +1,4 @@
 import { useLoaderData, useNavigate } from "react-router-dom";
-import useAxiosCommon from "../../hooks/useAxiosCommon";
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -35,8 +34,10 @@ const UpdatePost = () => {
       description,
       category,
       location,
-      no_of_volunteers_needed,
+      volunteers_needed,
     } = e;
+
+    const no_of_volunteers_needed = parseInt(volunteers_needed);
 
     const updatePostData = {
       thumbnail,
@@ -57,7 +58,7 @@ const UpdatePost = () => {
       );
       if (data.modifiedCount > 0) {
         toast.success("Post updated successfully !");
-        navigate("/myPost");
+        navigate("/dashboard/myPost");
       }
     } catch (err) {
       toast.error(err.message);
@@ -149,7 +150,7 @@ const UpdatePost = () => {
               className="block w-full px-4 py-2  border rounded-lg border-gray-600 focus:border-[#553739] focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-[#553739]"
               type="number"
               placeholder="Enter number of volunteers"
-              {...register("no_of_volunteers_needed", { required: true })}
+              {...register("volunteers_needed", { required: true })}
               defaultValue={no_of_volunteers_needed}
             />
           </div>

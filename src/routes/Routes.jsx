@@ -7,12 +7,15 @@ import Register from "../pages/Register/Register";
 import NeedVolunteer from "../pages/NeedVolunteer/NeedVolunteer";
 import VolunteerDetails from "../pages/VolunteerDetails/VolunteerDetails";
 import PrivateRoute from "./PrivateRoute";
-import AddVolunteerPost from "../pages/AddVolunteerPost/AddVolunteerPost";
-import MyPost from "../pages/MyPost/MyPost";
 import UpdatePost from "../pages/MyPost/UpdatePost";
 import BeAVolunteerPage from "../pages/BeAVolunteerPage/BeAVolunteerPage";
-import MyVolunteerReq from "../pages/MyVolunteerReq/MyVolunteerReq";
 import Profile from "../pages/Profile/Profile";
+import DashboardLayout from "../layout/DashboardLayout";
+import VolunteerRequests from "../pages/Dashboard/Admin/VolunteerRequests";
+import MyVolunteerReq from "../pages/Dashboard/User/MyVolunteerReq";
+import AddPost from "../pages/Dashboard/Common/AddPost";
+import MyPost from "../pages/Dashboard/Common/MyPost";
+import DashboardProfile from "../pages/Dashboard/Common/DashboardProfile";
 
 const router = createBrowserRouter([
   {
@@ -44,22 +47,7 @@ const router = createBrowserRouter([
         path: "/needVolunteer",
         element: <NeedVolunteer />,
       },
-      {
-        path: "/addPost",
-        element: (
-          <PrivateRoute>
-            <AddVolunteerPost />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "/myPost",
-        element: (
-          <PrivateRoute>
-            <MyPost />
-          </PrivateRoute>
-        ),
-      },
+
       {
         path: "/update/:id",
         element: (
@@ -90,11 +78,49 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`${import.meta.env.VITE_API_URL}/volunteers/${params.id}`),
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />,
+    children: [
       {
-        path: "/myVolunteerReq",
+        index: true,
+        element: (
+          <PrivateRoute>
+            <MyPost />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "addPost",
+        element: (
+          <PrivateRoute>
+            <AddPost />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "myVolunteerReq",
         element: (
           <PrivateRoute>
             <MyVolunteerReq />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "volunteerRequests",
+        element: (
+          <PrivateRoute>
+            <VolunteerRequests />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <DashboardProfile />
           </PrivateRoute>
         ),
       },

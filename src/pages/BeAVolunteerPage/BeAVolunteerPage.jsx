@@ -70,7 +70,7 @@ const BeAVolunteerPage = () => {
           timer: 1500,
         });
         setTimeout(() => {
-          navigate("/myVolunteerReq");
+          navigate("/dashboard/myVolunteerReq");
         }, 1500);
       }
     } catch (err) {

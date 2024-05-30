@@ -2,13 +2,13 @@ import { useState } from "react";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useForm } from "react-hook-form";
-import useAuth from "../../hooks/useAuth";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
-const AddVolunteerPost = () => {
+const AddPost = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { register, handleSubmit } = useForm();
   const { user } = useAuth();
@@ -22,8 +22,10 @@ const AddVolunteerPost = () => {
       description,
       category,
       location,
-      no_of_volunteers_needed,
+      volunteers_needed,
     } = e;
+
+    const no_of_volunteers_needed = parseInt(volunteers_needed);
 
     if (no_of_volunteers_needed == 0)
       return toast.error("Volunteers numbers minimum 1 or many.");
@@ -45,7 +47,7 @@ const AddVolunteerPost = () => {
       const { data } = await axiosSecure.post("/volunteers", addPostFormData);
       if (data.insertedId) {
         toast.success("Post added successfully !");
-        navigate("/myPost");
+        navigate("/dashboard/myPost");
       }
     } catch (err) {
       toast.error(err.message);
@@ -53,7 +55,7 @@ const AddVolunteerPost = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-8 lg:my-12">
+    <div className="max-w-6xl mx-auto my-8 lg:my-12">
       <Helmet>
         <title>Add Volunteer Post</title>
       </Helmet>
@@ -132,7 +134,7 @@ const AddVolunteerPost = () => {
               className="block w-full px-4 py-2  border rounded-lg border-gray-600 focus:border-[#553739] focus:ring-opacity-40 focus:outline-none focus:ring focus:ring-[#553739]"
               type="number"
               placeholder="Enter number of volunteers"
-              {...register("no_of_volunteers_needed", { required: true })}
+              {...register("volunteers_needed", { required: true })}
             />
           </div>
 
@@ -178,4 +180,4 @@ const AddVolunteerPost = () => {
   );
 };
 
-export default AddVolunteerPost;
+export default AddPost;

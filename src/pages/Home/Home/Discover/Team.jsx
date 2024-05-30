@@ -1,6 +1,6 @@
 const Team = () => {
   return (
-    <section className="px-2 lg:px-0">
+    <section data-aos="fade-up" className="px-2 lg:px-0">
       <div className="text-center flex flex-col items-center mb-8">
         <p
           data-aos="fade-right"
@@ -17,10 +17,7 @@ const Team = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* team 1 */}
-        <div
-          data-aos="fade-up"
-          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
-        >
+        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"
@@ -33,10 +30,7 @@ const Team = () => {
           </div>
         </div>
         {/* team 2 */}
-        <div
-          data-aos="fade-up"
-          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
-        >
+        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"
@@ -51,10 +45,7 @@ const Team = () => {
           </div>
         </div>
         {/* team 3 */}
-        <div
-          data-aos="fade-up"
-          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
-        >
+        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"
@@ -69,10 +60,7 @@ const Team = () => {
           </div>
         </div>
         {/* team 4 */}
-        <div
-          data-aos="fade-up"
-          className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]"
-        >
+        <div className="card card-compact rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden bg-[#1A1A1A]">
           <figure>
             <img
               className=" bg-cover w-full hover:scale-110 transition-all duration-300"

@@ -1,28 +1,23 @@
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
-import useAxiosCommon from "../../hooks/useAxiosCommon";
 import { MdOutlineCancel } from "react-icons/md";
-import toast from "react-hot-toast";
-import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
 import Lottie from "lottie-react";
-import empty from "../../assets/animation/empty.json";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+import empty from "../../../assets/animation/empty.json";
+import useAuth from "../../../hooks/useAuth";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const MyVolunteerReq = () => {
   const [myReq, setMyReq] = useState([]);
   const { user } = useAuth();
-  const axiosCommon = useAxiosCommon();
   const axiosSecure = useAxiosSecure();
-
   useEffect(() => {
     getData();
   }, [user]);
 
   const getData = async () => {
-    const { data } = await axiosSecure(
-      `/volunteerRequests?email=${user?.email}`
-    );
+    const { data } = await axiosSecure(`/volunteerRequests/${user?.email}`);
     setMyReq(data);
   };
 
@@ -37,7 +32,7 @@ const MyVolunteerReq = () => {
         confirmButtonText: "Yes",
       }).then((result) => {
         if (result.isConfirmed) {
-          axiosCommon.delete(`/volunteerRequests/${id}`).then((data) => {
+          axiosSecure.delete(`/volunteerRequests/${id}`).then((data) => {
             if (data.data.deletedCount > 0) {
               Swal.fire({
                 title: "Canceled your volunteer request.",
@@ -54,7 +49,7 @@ const MyVolunteerReq = () => {
   };
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto my-8 lg:my-12 px-2 lg:px-0">
+    <div className="overflow-x-auto max-w-6xl mx-auto my-8 lg:my-12 px-2 lg:px-0">
       <Helmet>
         <title>My Volunteer Request</title>
       </Helmet>
@@ -67,6 +62,7 @@ const MyVolunteerReq = () => {
           <thead>
             <tr className="text-base">
               <th></th>
+              <th>Image</th>
               <th>Post Title</th>
               <th>Category</th>
               <th>No. of Volunteer</th>
@@ -78,16 +74,19 @@ const MyVolunteerReq = () => {
             {myReq.map((req, idx) => (
               <tr className="text-base" key={req._id}>
                 <th>{idx + 1}</th>
+                <td>
+                  <img className="w-24 rounded-lg" src={req.thumbnail} />
+                </td>
                 <td>{req.post_title}</td>
                 <td>{req.category}</td>
                 <td>{req.no_of_volunteers_needed}</td>
                 <td>{new Date(req.deadline).toLocaleDateString()}</td>
-                <td className="flex gap-4 text-3xl text-red-500">
+                <td className="flex gap-4 text-red-400">
                   <button
                     onClick={() => handleCancel(req._id)}
-                    className="hover:text-[#a86340]"
+                    className="hover:bg-[#ffcbcb] btn btn-ghost"
                   >
-                    <MdOutlineCancel />
+                    <MdOutlineCancel size={26} />
                   </button>
                 </td>
               </tr>
@@ -104,5 +103,3 @@ const MyVolunteerReq = () => {
 };
 
 export default MyVolunteerReq;
-
-// /volunteerRequests?email

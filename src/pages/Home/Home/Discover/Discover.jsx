@@ -39,7 +39,7 @@ const Discover = () => {
           </div>
         </div>
       </div>
-      <div data-aos="fade-up" className="flex justify-center items-center">
+      <div className="flex justify-center items-center">
         <div className="border text-center border-b-8 border-[#955E42] flex items-center space-y-4 md:space-y-0 py-6 px-6 md:py-12 lg:py-20 w-4/5 md:max-w-2xl lg:max-w-5xl rounded-3xl flex-col md:flex-row md:flex justify-center md:justify-around mx-auto md:mb-8 shadow-md bg-[#1A1A1A] absolute bottom-[450px] md:bottom-72 lg:-bottom-52">
           <div className="text-white flex items-center gap-2">
             <div>

@@ -7,6 +7,7 @@ import router from "./routes/Routes";
 import { Toaster } from "react-hot-toast";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 AOS.init({
   duration: 1000,
@@ -14,11 +15,15 @@ AOS.init({
   once: true,
 });
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
-      <Toaster />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+        <Toaster />
+      </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>
 );

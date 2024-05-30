@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
 import { Link } from "react-router-dom";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import toast from "react-hot-toast";
-import useAxiosCommon from "../../hooks/useAxiosCommon";
 import Swal from "sweetalert2";
 import { Helmet } from "react-helmet";
-import empty from "../../assets/animation/empty.json";
+import empty from "../../../assets/animation/empty.json";
 import Lottie from "lottie-react";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
+import useAxiosCommon from "../../../hooks/useAxiosCommon";
 
 const MyPost = () => {
   const { user } = useAuth();
@@ -64,7 +64,7 @@ const MyPost = () => {
   };
 
   return (
-    <div className="overflow-x-auto max-w-7xl mx-auto mt-8 lg:mt-12 px-2 lg:px-0">
+    <div className="overflow-x-auto max-w-6xl mx-auto mt-8 lg:mt-12 px-2 lg:px-0">
       <Helmet>
         <title>My Need Volunteer Posts</title>
       </Helmet>
@@ -77,6 +77,7 @@ const MyPost = () => {
           <thead>
             <tr className="text-base">
               <th></th>
+              <th>Image</th>
               <th>Post Title</th>
               <th>Category</th>
               <th>No. of Volunteer</th>
@@ -88,6 +89,9 @@ const MyPost = () => {
             {myPosts.map((myPost, idx) => (
               <tr className="text-base" key={myPost._id}>
                 <th>{idx + 1}</th>
+                <td>
+                  <img className="w-24 rounded-lg" src={myPost.thumbnail} />
+                </td>
                 <td>{myPost.post_title}</td>
                 <td>{myPost.category}</td>
                 <td>{myPost.no_of_volunteers_needed}</td>
