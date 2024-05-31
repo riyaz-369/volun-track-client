@@ -12,6 +12,8 @@ import {
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 import useAxiosCommon from "../hooks/useAxiosCommon";
+import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -55,6 +57,21 @@ const AuthProvider = ({ children }) => {
       const userEmail = currentUser?.email || user?.email;
       const loggedUserEmail = { email: userEmail };
       setUser(currentUser);
+
+      const userInfo = {
+        name: currentUser?.displayName,
+        email: currentUser?.email,
+        role: "user",
+      };
+
+      const getData = async () => {
+        const { data } = await axiosCommon.post("/user", userInfo);
+        console.log(data);
+      };
+      if (currentUser) {
+        getData();
+      }
+
       setLoading(false);
 
       if (currentUser) {
