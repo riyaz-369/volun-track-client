@@ -1,12 +1,8 @@
 # VolunTrack
 
-### Live Site
-
-- [VolunTrack](https://volun-track-9c5ae.web.app)
+- [Live site](https://volun-track-9c5ae.web.app)
   
-### Server repo
-
-- [VolunTrack](https://github.com/riyaz-369/volun-track-server)
+- [Server repo](https://github.com/riyaz-369/volun-track-server)
 
 ## Prerequisites
 
